@@ -1,0 +1,58 @@
+@import "../../Scss/variables.scss";
+    
+.ArrivalContainer {
+    min-height: 20vh;
+}
+.arrivals {
+    background: linear-gradient(
+            rgba(29, 29, 29, 0.285),
+            rgba(29, 29, 29, 0.285)
+        ),
+        url("../Assets/arrivals.png") no-repeat;
+    background-size: cover;
+    min-height: 40vh;
+}
+
+.basics {
+    background: linear-gradient(
+            rgba(29, 29, 29, 0.285),
+            rgba(29, 29, 29, 0.285)
+        ),
+        url("../Assets/basics.png") no-repeat;
+    background-size: cover;
+    min-height: 40vh;
+}
+
+.salenav {
+    background: linear-gradient(
+            rgba(29, 29, 29, 0.285),
+            rgba(29, 29, 29, 0.285)
+        ),
+        url("../Assets/sale.png") no-repeat;
+    background-size: cover;
+    min-height: 40vh;
+}
+.arrival {
+    padding: 30px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: end;
+    h1 {
+        width: 180px;
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: white;
+    }
+    button {
+        font-size: 12px;
+        margin: 20px 5px;
+        padding: 10px 20px;
+        background: aquamarine;
+        border-radius: 30px;
+        @media screen and (max-width: $mobile_limit) {
+            font-size: 10px;
+            padding: 6px 12px;
+        }
+    }
+}

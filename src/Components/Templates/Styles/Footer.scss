@@ -1,0 +1,63 @@
+@import "../../Scss/variables.scss";
+@import "../../Scss/mixins.scss";
+
+.footerText {
+    text-align: center;
+    color: gray;
+    padding: 20px;
+    border-top: 1px solid rgba(128, 128, 128, 0.459);
+}
+
+.siteDesc {
+    padding: 1em 2em;
+    section{
+        display: flex;
+        align-items: center;
+        img{
+            width: 45px;
+            margin-right: 20px;
+        }
+    }
+
+    .decription{
+        margin: 30px 0;
+        color: gray;
+    }
+
+
+    .socialLinks {
+        max-width: 300px;
+        @include content-center;
+        justify-content: space-between;
+        svg {
+            width: 20px;
+            height: 20px;
+            fill: rgba(128, 128, 128, 0.712);
+        }
+        @media screen and(max-width:$mobile_limit){
+            margin: auto;
+        }
+    }
+}
+
+.footerElement {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    @media screen and (max-width: $minimum_mobile_limit) {
+        display: flex;
+    }
+}
+
+.footerDetails {
+    padding: 20px;
+    min-width: 180px;
+    font-size: 90%;
+    h3 {
+        font-weight: 100;
+        margin: 20px 0 20px 0;
+    }
+    li {
+        margin: 8px 0;
+    }
+}

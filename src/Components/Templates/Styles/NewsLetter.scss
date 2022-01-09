@@ -1,0 +1,49 @@
+@import "../../Scss/variables.scss";
+
+.newdLetterContainer{
+    background:linear-gradient(rgba(39, 39, 39, 0.253),rgba(61, 61, 61, 0.279)), url('../Assets/NewsLetterBackground.png');
+    background-size: cover;
+    border-radius: 5px;
+    margin: 50px auto;
+    >div{
+        min-height: 25vh;
+        align-items: center;
+    }
+    section{
+        padding: 20px;
+        h1{
+            color: white;
+            font-weight: 400;
+        }
+    }
+    .subscribeButton{
+        padding: 20px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        input{
+            width: 250px;
+            font-size: 12px;
+            padding: 10px 20px;
+            border-radius: 30px;
+            border: none;
+            @media screen and (max-width:$mobile_limit){
+                font-size: 10px;
+                max-width: 200px;
+            }
+        }
+        button{
+            font-size: 12px;
+            padding: 10px 20px;
+            background: aquamarine;
+            border-radius: 30px;
+            @media screen and (max-width:$mobile_limit){
+                font-size: 10px;;
+                padding: 6px 12px;
+            }
+        }
+        @media screen and (max-width:$mobile_limit){
+            padding: 10px;;
+        }
+    }
+}

@@ -1,0 +1,260 @@
+@import "../../Scss/variables.scss";
+@import "../../Scss/mixins.scss";
+
+.HomeContainer {
+    background: linear-gradient(
+            rgba(44, 44, 44, 0.137),
+            rgba(34, 34, 34, 0.288)
+        ),
+        url("../Assets/Home_Image.png") no-repeat fixed;
+    background-size: cover;
+    min-height: 85vh;
+    padding: 30px 0px 0px 0px;
+    .homeHeadingContainer {
+        min-height: 60vh;
+        margin: 3rem auto;
+        margin-bottom: 1rem;
+        padding-left: 13em;
+        padding-top: 5rem;
+        .homeheading {
+            h1 {
+                width: 300px;
+                color: white;
+                font-size: 3.5rem;
+            }
+        }
+        .shopButton {
+            margin-top: 3rem;
+            width: 130px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            button {
+                width: 40px;
+                height: 40px;
+                border: none;
+                border-radius: 50%;
+                background: #7ad0a7;
+                @include content-center;
+                svg {
+                    fill: white;
+                }
+            }
+            span {
+                color: white;
+                font-size: 80%;
+            }
+        }
+        @media screen and(max-width : $mobile_limit) {
+            padding: 3rem 5rem 2rem 5rem;
+            .homeheading {
+                h1 {
+                    width: 200px;
+                    font-size: 2.5rem;
+                }
+            }
+        }
+    }
+    .homeFeatures {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        @media screen and (max-width: $mobile_limit) {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+    }
+    .homeFeaturesContainer {
+        background: white;
+        border-radius: 0 5em 0 0;
+        margin: 20px 0 0 0;
+        padding: 2em 0rem 1em 0;
+        @include content-center;
+        justify-content: end;
+        @media screen and (max-width: $mobile_limit) {
+            border-radius: 0;
+            justify-content: center;
+        }
+        @media screen and (min-width: 1200px) {
+            padding-right: 5rem;
+        }
+        .features {
+            display: flex;
+            flex-direction: row;
+            justify-content: end;
+            flex-wrap: wrap;
+            @media screen and (max-width: $mobile_limit) {
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        .feature {
+            display: flex;
+            width: 220px;
+            margin: 10px;
+            @media screen and (max-width: $medium_size_limit) {
+                width: 200px;
+            }
+            > div {
+                svg {
+                    background: rgba(255, 127, 80, 0.203);
+                    width: 35px;
+                    height: 35px;
+                    fill: #fbb13be7;
+                    padding: 5px;
+                    border-radius: 5px;
+                }
+                img {
+                    background: rgba(255, 127, 80, 0.103);
+                    width: 35px;
+                    height: 35px;
+                    padding: 10px;
+                    border-radius: 5px;
+                }
+                @media screen and (max-width: $medium_size_limit) {
+                    svg,
+                    img {
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+            }
+            .featuredetails {
+                margin-left: 15px;
+                h3 {
+                    color: black;
+                    font-size: 85%;
+                }
+                p {
+                    color: gray;
+                    margin: 10px 0;
+                    font-size: 80%;
+                }
+                @media screen and (max-width: $medium_size_limit) {
+                    h3 {
+                        font-size: 75%;
+                    }
+                    p {
+                        font-size: 70%;
+                    }
+                }
+            }
+        }
+    }
+    .homeArrows {
+        display: flex;
+        justify-content: center;
+        button {
+            height: 50px;
+            width: 30px;
+            margin: 5px 10px;
+            svg {
+                fill: white;
+            }
+            &:last-child {
+                background: #7ad0a7;
+            }
+        }
+    }
+
+    @media screen and(max-width : $mobile_limit) {
+        padding: 20px 0px 0 0px;
+    }
+}
+
+.productsForTodayContainer {
+    @include content-center;
+    flex-wrap: wrap;
+}
+
+.selectedProducts {
+    position: relative;
+    display: flex !important;
+    min-width: 1.2em;
+    margin: auto;
+    padding: 0 !important;
+    @media screen and (min-width:$medium_size_limit) {
+        max-width: 1390px !important;
+    }
+    @media screen and (max-width:$mobile_limit) {
+    }
+    .HorizontalscrollableContainer{
+        display: flex;
+        width:100%;
+        overflow-x: auto
+    }
+    .homeleftscrollBar,.homeRightscrollBar{
+        z-index: 100;
+        @include content-center;
+        button svg{
+            font-size: 40px;
+            padding: 0 !important;
+            @media screen and (max-width:$mobile_limit) {
+                font-size: 25px !important;
+            }
+        }
+        @media screen and (max-width:$minimum_mobile_limit) {
+            position: absolute;
+            top: 40%;
+        }
+    }
+    .homeleftscrollBar{
+        margin: 0px 20px 0 0;
+        @media screen and (max-width:$mobile_limit) {
+            margin: 0px 0 0 0;
+            left: -10px;
+        }
+        svg{
+            fill: #CECECE;
+        }
+    }
+    .homeRightscrollBar{
+        margin: 0px 0px 0 20px;
+        @media screen and (max-width:$mobile_limit) {
+            margin: 0px 0px 0 0;
+            right: 0px;
+        }
+        
+    }
+}
+.HorizontalscrollableContainer::-webkit-scrollbar{
+    width: 0;
+}
+.selectedProductsHeading {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    margin: 80px 0 20px 0;
+    h1 {
+        color: gray;
+        font-weight: 400;
+        font-size: 2em;
+    }
+    button {
+        color: black;
+        border: 1px solid #fed407;
+        border-radius: 30px;
+        padding: 10px 20px;
+    }
+    @media screen and (max-width: $mobile_limit) {
+        button {
+            font-size: 0.5rem;
+            padding: 5px 10px;
+        }
+        h1 {
+            font-size: 1.1em;
+        }
+    }
+}
+
+.centeredheading {
+    text-align: center;
+    color: gray;
+    margin: 40px 0 30px 0;
+    font-size: 2em;
+    font-weight: 400;
+    @media screen and (max-width: $minimum_mobile_limit) {
+        font-size: 1.5em;
+    }
+}
