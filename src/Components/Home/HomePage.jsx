@@ -7,16 +7,15 @@ import './Styles/HomePage.scss'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import LocalShippingOutlinedIcon from '@mui/icons-material/LocalShippingOutlined';
-import Garentee from './Assets/garentee.svg'
-import Happy from './Assets/happy.svg'
-import BasicProduct from '../Templates/BasicProduct'
-import Image1 from './Assets/products/img1.png'
-import Image2 from './Assets/products/img2.png'
-import Image3 from './Assets/products/img3.png'
-import Image4 from './Assets/products/img4.png'
-import Arrivals from './Arrivals'
-import ChoodingReason from './ChoodingReason'
-
+import Garentee from './Assets/garentee.svg';
+import Happy from './Assets/happy.svg';
+import BasicProduct from '../Templates/BasicProduct';
+import Image1 from './Assets/products/img1.png';
+import Image2 from './Assets/products/img2.png';
+import Image3 from './Assets/products/img3.png';
+import Image4 from './Assets/products/img4.png';
+import Arrivals from './Arrivals';
+import ChoodingReason from './ChoodingReason';
 
 function HomePage() {
     useEffect(() => {
@@ -116,15 +115,15 @@ function HomePage() {
                     <Button ><ArrowBackIcon onClick={leftScroll} id="leftScroll" /></Button>
                 </div>
                 <div className='HorizontalscrollableContainer'>
-                    <BasicProduct image={Image3} title={"T-Shirt Summer Vibes"} price={89.99} discount={true} discountPercentage={119.99} lastPrice={119.99} />
+                    <BasicProduct image={Image3} title={"T-Shirt Summer Vibes"} price={89.99} discount={true} discountPercentage={30} lastPrice={119.99} />
                     <BasicProduct image={Image4} title={"Loose Knit 3/4 Sleeve"} price={119.99} />
                     <BasicProduct image={Image1} title={"Basic Slim Fit T-Shirt"} price={79.99} />
                     <BasicProduct image={Image2} title={"Loose Textured T-Shirt"} price={119.99} />
-                    <BasicProduct image={Image3} title={"T-Shirt Summer Vibes"} price={89.99} discount={true} discountPercentage={119.99} lastPrice={119.99} />
+                    <BasicProduct image={Image3} title={"T-Shirt Summer Vibes"} price={89.99} discount={true} discountPercentage={30} lastPrice={119.99} />
                     <BasicProduct image={Image4} title={"Loose Knit 3/4 Sleeve"} price={119.99} />
                     <BasicProduct image={Image1} title={"Basic Slim Fit T-Shirt"} price={79.99} />
                     <BasicProduct image={Image2} title={"Loose Textured T-Shirt"} price={119.99} />
-                    <BasicProduct image={Image3} title={"T-Shirt Summer Vibes"} price={89.99} discount={true} discountPercentage={119.99} lastPrice={119.99} />
+                    <BasicProduct image={Image3} title={"T-Shirt Summer Vibes"} price={89.99} discount={true} discountPercentage={30} lastPrice={119.99} />
                     <BasicProduct image={Image4} title={"Loose Knit 3/4 Sleeve"} price={119.99} />
                     <BasicProduct image={Image1} title={"Basic Slim Fit T-Shirt"} price={79.99} />
                     <BasicProduct image={Image2} title={"Loose Textured T-Shirt"} price={119.99} />
@@ -139,7 +138,7 @@ function HomePage() {
             <div className="productsForTodayContainer">
                 <BasicProduct image={Image1} title={"Basic Slim Fit T-Shirt"} price={79.99} />
                 <BasicProduct image={Image2} title={"Loose Textured T-Shirt"} price={119.99} />
-                <BasicProduct image={Image3} title={"T-Shirt Summer Vibes"} price={89.99} discount={true} discountPercentage={119.99} lastPrice={119.99} />
+                <BasicProduct image={Image3} title={"T-Shirt Summer Vibes"} price={89.99} discount={true} discountPercentage={30} lastPrice={119.99} />
                 <BasicProduct image={Image4} title={"Loose Knit 3/4 Sleeve"} price={119.99} />
             </div>
             <NewsLetter />

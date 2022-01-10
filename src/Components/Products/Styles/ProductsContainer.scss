@@ -1,0 +1,219 @@
+@import "../../Scss/variables.scss";
+@import "../../Scss/mixins.scss";
+
+.ProductsPageContainer {
+    padding: 30px 0 30px 0;
+    .navActions img {
+        filter: invert(1);
+    }
+    .desktopNav a {
+        color: black;
+    }
+    .logo svg {
+        fill: black;
+    }
+}
+
+
+.productsContainerHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: auto;
+    h3 {
+        font-weight: 300;
+    }
+    .prefilteroption {
+        min-width: 200px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        div {
+            margin: auto;
+        }
+        select {
+            padding: 10px 15px;
+            border-radius: 20px;
+            margin: 5px 15px;
+        }
+    }
+}
+.ProductsList {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    @media screen and (max-width: $medium_size_limit) {
+        justify-content: space-evenly;
+    }
+    padding: 20px 0;
+}
+
+.checkBoxes {
+    display: flex;
+    align-items: center;
+    input {
+        margin: 10px;
+        width: 20px;
+        height: 20px;
+        background-color: black;
+    }
+}
+
+input[name="size"],
+input[name="color"] {
+    display: none;
+}
+
+input[name="size"]:checked ~ label {
+    border: 3px solid aqua;
+}
+input[name="color"]:checked ~ label {
+    border: 5px solid aqua;
+}
+.sizerow,
+.colorrow {
+    margin: auto;
+    width: fit-content;
+    display: flex;
+    label {
+        border: 1px solid rgba(128, 128, 128, 0.255);
+        width: 35px;
+        height: 35px;
+        @include content-center;
+    }
+}
+
+.colorrow .checkBoxes {
+    border: 1px solid gray;
+    padding: 5px;
+    label {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+.filterhideandshow {
+    display: none;
+}
+
+@media screen and (max-width: 1000px) {
+    .ProductsPageMainContainer {
+        display: flex;
+        justify-content: center;
+    }
+    .filterhideandshow {
+        z-index: 100;
+        @include content-center;
+        background-color: aqua;
+        min-width: 80px;
+        height: 30px;
+        border-radius: 30px;
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        box-shadow: 0 0 5px 1px gray;
+    }
+    .filtersContainer {
+        display: none;
+    }
+    .prefilteroption {
+        margin: auto;
+    }
+}
+
+.filterItems {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+
+    .filterItem {
+        border: 1px solid rgba(165, 165, 165, 0.211);
+        margin: 10px 0;
+        min-width: 250px;
+    }
+}
+
+.Productspegination{
+    @include content-center;
+    position: relative;
+    div{
+        @include content-center;
+        justify-content: space-between;
+        min-width: 150px;
+        button{
+            width: 30px;
+            background: transparent;
+            border: 1px solid gray;
+            border-radius: 3px;
+            height: 30px;
+        }
+        span{
+            font-size: 0.8em;
+        }
+    }
+    >span{
+        position: absolute;
+        right: 0;
+        text-decoration: underline;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+//Product Style
+
+.ProductContainer {
+    position: relative;
+    margin: 0 10px 50px 0;
+    img {
+        width: 250px;
+        height: 250px;
+        object-fit: cover;
+        object-position: top;
+    }
+    p {
+        font-size: 0.7em;
+    }
+    h3 {
+        max-width: 220px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.85em;
+    }
+    @media screen and (max-width: $mobile_limit) {
+        padding: 20px;
+    }
+}
+
+
+.likeButton{
+    @include content-center;
+    position: absolute;
+    right: 10px ;
+    top: 10px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: white;
+    svg{
+        width: 20px;
+        height: 20px;
+    }
+    @media screen and (max-width: $mobile_limit) {
+        padding: 20px;
+        right: 30px ;
+        top: 30px;    
+    }
+}

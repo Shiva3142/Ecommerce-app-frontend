@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Poppins:wght@300;600&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Poppins:wght@300;600&display=swap");
 
 * {
     margin: 0;
@@ -11,10 +10,11 @@
     scroll-behavior: smooth;
     outline: none;
     list-style: none;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 a,
 svg,
-button {
+button,
+label {
     cursor: pointer;
 }

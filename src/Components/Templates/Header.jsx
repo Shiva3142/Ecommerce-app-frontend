@@ -7,6 +7,7 @@ import Avtar from './Assets/Avtar.svg'
 import Search from './Assets/Search.svg'
 import DehazeIcon from '@mui/icons-material/Dehaze';
 import ClearIcon from '@mui/icons-material/Clear';
+import { NavLink } from 'react-router-dom';
 function Header() {
     function toggleNavbar(event) {
         let leftnav=document.getElementById('leftNav')
@@ -22,10 +23,10 @@ function Header() {
                 <header>
                     <div className="logo">
                         <DehazeIcon className='navbarOptionBtn' id="navbarOptionBtn" onClick={toggleNavbar}/>
-                        <img src={Logo} alt="Logo" />
+                        <NavLink to="/"> <img src={Logo} alt="Logo" /></NavLink>
                     </div>
                     <nav className='desktopNav'>
-                        <a href="#men">Men</a>
+                        <a href="#men"> <NavLink to="/products"> Men</NavLink></a>
                         <a href="#women">Women</a>
                         <a href="#kids">Kids</a>
                     </nav>

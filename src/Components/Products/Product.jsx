@@ -1,14 +1,12 @@
 import React from 'react'
-import './Styles/BasicProduct.scss'
-function BasicProduct(object) {
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+
+function Product(object) {
     return (
-        <div className='basicProduct'>
+        <div className='ProductContainer'>
+            <div className="likeButton"><FavoriteBorderIcon/></div>
             <img src={object.image} alt="" />
-            {
-                object.discount ? (
-                    <div className="dicountPercentage">{object.discountPercentage}%</div>
-                ) : (<></>)
-            }
+
             <div className="basicProductDescription">
                 <p>{object.title}</p>
                 <h3>
@@ -16,6 +14,7 @@ function BasicProduct(object) {
                         object.discount ? (
                             <>
                                 <span style={{ color: "red" }}> ${object.price} </span>
+
                                 <span style={{ color: "gray" }}> ${object.lastPrice} </span>
 
                             </>
@@ -31,4 +30,4 @@ function BasicProduct(object) {
     )
 }
 
-export default BasicProduct
+export default Product
