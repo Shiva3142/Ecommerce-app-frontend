@@ -16,41 +16,12 @@ import Image3 from './Assets/products/img3.png';
 import Image4 from './Assets/products/img4.png';
 import Arrivals from './Arrivals';
 import ChoodingReason from './ChoodingReason';
+import RecommendProducts from './RecommendProducts'
 
 function HomePage() {
     useEffect(() => {
         document.title = "Home"
     }, [])
-    function rightScroll(event) {
-        let HorizontalscrollableContainer=document.getElementsByClassName('HorizontalscrollableContainer')[0]
-        let leftScrollbtn=document.getElementById('leftScroll')
-        let rightScrollbtn=document.getElementById('rightScroll')
-        HorizontalscrollableContainer.scrollLeft=HorizontalscrollableContainer.scrollLeft+310
-        if (HorizontalscrollableContainer.scrollWidth-HorizontalscrollableContainer.scrollLeft<(HorizontalscrollableContainer.offsetWidth+10)) {
-            rightScrollbtn.style.fill='#CECECE'
-        }
-        else{
-            leftScrollbtn.style.fill='black'
-    
-        }
-    }
-    function leftScroll(event) {
-        let HorizontalscrollableContainer=document.getElementsByClassName('HorizontalscrollableContainer')[0]
-        let leftScrollbtn=document.getElementById('leftScroll')
-        let rightScrollbtn=document.getElementById('rightScroll')
-        HorizontalscrollableContainer.scrollLeft=HorizontalscrollableContainer.scrollLeft-310
-        if (HorizontalscrollableContainer.scrollLeft<10) {
-            leftScrollbtn.style.fill='#CECECE'
-        }
-        else{
-            rightScrollbtn.style.fill='black'
-
-        }
-        
-    }
-
-
-
 
     return (
         <>
@@ -106,32 +77,8 @@ function HomePage() {
                 </Grid>
             </div>
             <Arrivals />
-            <Container className="selectedProductsHeading">
-                <h1>Selected just for you</h1>
-                <Button variant="outlined">Show more</Button>
-            </Container>
-            <Container className="selectedProducts">
-                <div className="homeleftscrollBar">
-                    <Button ><ArrowBackIcon onClick={leftScroll} id="leftScroll" /></Button>
-                </div>
-                <div className='HorizontalscrollableContainer'>
-                    <BasicProduct image={Image3} title={"T-Shirt Summer Vibes"} price={89.99} discount={true} discountPercentage={30} lastPrice={119.99} />
-                    <BasicProduct image={Image4} title={"Loose Knit 3/4 Sleeve"} price={119.99} />
-                    <BasicProduct image={Image1} title={"Basic Slim Fit T-Shirt"} price={79.99} />
-                    <BasicProduct image={Image2} title={"Loose Textured T-Shirt"} price={119.99} />
-                    <BasicProduct image={Image3} title={"T-Shirt Summer Vibes"} price={89.99} discount={true} discountPercentage={30} lastPrice={119.99} />
-                    <BasicProduct image={Image4} title={"Loose Knit 3/4 Sleeve"} price={119.99} />
-                    <BasicProduct image={Image1} title={"Basic Slim Fit T-Shirt"} price={79.99} />
-                    <BasicProduct image={Image2} title={"Loose Textured T-Shirt"} price={119.99} />
-                    <BasicProduct image={Image3} title={"T-Shirt Summer Vibes"} price={89.99} discount={true} discountPercentage={30} lastPrice={119.99} />
-                    <BasicProduct image={Image4} title={"Loose Knit 3/4 Sleeve"} price={119.99} />
-                    <BasicProduct image={Image1} title={"Basic Slim Fit T-Shirt"} price={79.99} />
-                    <BasicProduct image={Image2} title={"Loose Textured T-Shirt"} price={119.99} />
-                </div>
-                <div className="homeRightscrollBar">
-                    <Button >< ArrowForwardIcon onClick={rightScroll} id="rightScroll"/></Button>
-                </div>
-            </Container>
+            
+            <RecommendProducts />
             <h1 className='centeredheading'>Why should you choose us?</h1>
             <ChoodingReason />
             <h1 className='centeredheading'>Products in today</h1>

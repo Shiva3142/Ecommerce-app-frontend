@@ -7,7 +7,7 @@ function Product(object) {
         <div className='ProductContainer'>
             <div className="likeButton"><FavoriteBorderIcon /></div>
             <img src={object.image} alt="" />
-
+            
             <div className="basicProductDescription">
                 <p> <NavLink to={`/product/${object.id}`}> {object.title}</NavLink></p>
                 <h3>

@@ -5,6 +5,8 @@ import Header from '../Templates/Header'
 import NewsLetter from '../Templates/NewsLetter'
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import ProductsContainer from './ProductsContainer'
+
+
 function Products() {
     return (
         <>
