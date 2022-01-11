@@ -14,7 +14,6 @@
     }
 }
 
-
 .productsContainerHeader {
     display: flex;
     justify-content: space-between;
@@ -94,7 +93,8 @@ input[name="color"]:checked ~ label {
     }
 }
 
-.filterhideandshow {
+.filterhideandshow,#hideNavBar{
+    cursor: pointer;
     display: none;
 }
 
@@ -104,22 +104,41 @@ input[name="color"]:checked ~ label {
         justify-content: center;
     }
     .filterhideandshow {
-        z-index: 100;
+        // z-index: 100;
         @include content-center;
-        background-color: aqua;
-        min-width: 80px;
-        height: 30px;
-        border-radius: 30px;
-        position: fixed;
-        bottom: 10px;
+        float: right;
+        // background-color: aqua;
+        position: absolute;
         right: 10px;
-        box-shadow: 0 0 5px 1px gray;
+        border: 1px solid gray;
+        border-radius: 20px;
+        text-decoration: underline;
+        padding: 3px 30px;
+    }
+    #hideNavBar{
+        display: block;
+        position: absolute;
+        right: 10px;
+        top: 10px;
     }
     .filtersContainer {
         display: none;
     }
     .prefilteroption {
         margin: auto;
+    }
+
+    .filterItemsContainer {
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        background: white;
+        height: 100vh;
+        z-index: 10;
+        overflow-y: auto;
     }
 }
 
@@ -128,8 +147,7 @@ input[name="color"]:checked ~ label {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: white;
-
+    padding: 30px 0;
     .filterItem {
         border: 1px solid rgba(165, 165, 165, 0.211);
         margin: 10px 0;
@@ -137,40 +155,37 @@ input[name="color"]:checked ~ label {
     }
 }
 
-.Productspegination{
+.Productspegination {
     @include content-center;
     position: relative;
-    div{
+    div {
         @include content-center;
         justify-content: space-between;
         min-width: 150px;
-        button{
+        button {
             width: 30px;
             background: transparent;
             border: 1px solid gray;
             border-radius: 3px;
             height: 30px;
         }
-        span{
+        span {
             font-size: 0.8em;
         }
     }
-    >span{
+    >span:first-child {
         position: absolute;
-        right: 0;
+        left: 0;
+        cursor: pointer;
         text-decoration: underline;
     }
+    >span:last-child {
+        text-decoration: underline;
+        position: absolute;
+        right: 0;
+        cursor: pointer;
+    }
 }
-
-
-
-
-
-
-
-
-
-
 
 //Product Style
 
@@ -197,23 +212,22 @@ input[name="color"]:checked ~ label {
     }
 }
 
-
-.likeButton{
+.likeButton {
     @include content-center;
     position: absolute;
-    right: 10px ;
+    right: 10px;
     top: 10px;
     width: 35px;
     height: 35px;
     border-radius: 50%;
     background: white;
-    svg{
+    svg {
         width: 20px;
         height: 20px;
     }
     @media screen and (max-width: $mobile_limit) {
         padding: 20px;
-        right: 30px ;
-        top: 30px;    
+        right: 30px;
+        top: 30px;
     }
 }

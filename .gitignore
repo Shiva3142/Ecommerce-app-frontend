@@ -3,4 +3,5 @@ firebase.json
 .firebase
 build
 .firebaserc
+firebase-debug.log
 package-lock.json
