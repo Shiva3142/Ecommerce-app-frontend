@@ -11,12 +11,10 @@ function ProductsContainer() {
     let [ProductsData, updateProductsData] = useState(ProductData);
     let [sortValue, updateSortValue] = useState(0);
     let [ProductCountValue, updateProductCountValue] = useState(10);
-    // console.log(ProductsData);
     let [productsValuePointer, updateproductsValuePointer] = useState(0)
     let [currentpage, updatecurrentpage] = useState(1)
     let [totalPages, updatetotalPages] = useState(Math.ceil(ProductsData.length / ProductCountValue))
     function updatecountOftheProductstoShow(event) {
-        // console.log(event);
         updatecurrentpage(1)
         updateProductCountValue(parseInt(event.target.value))
         updatetotalPages(Math.ceil(ProductsData.length / event.target.value))
@@ -25,28 +23,24 @@ function ProductsContainer() {
 
     function goToTheNextProductsList(event) {
         if (currentpage >= totalPages) {
-
         } else {
-
+            window.scrollTo(0,0)
             updateproductsValuePointer(productsValuePointer + ProductCountValue)
             updatecurrentpage(currentpage + 1)
         }
     }
     function goToTheBackProductsList(event) {
-        if (currentpage ===1) {
-
+        if (currentpage === 1) {
         } else {
-
-            updateproductsValuePointer(productsValuePointer- ProductCountValue)
-            updatecurrentpage(currentpage -1)
+            window.scrollTo(0,0)
+            updateproductsValuePointer(productsValuePointer - ProductCountValue)
+            updatecurrentpage(currentpage - 1)
         }
     }
 
     function sortTheProducts(event) {
         updateSortValue(event.target.value);
         let data = ProductsData;
-        // console.log(sortValue);
-        // console.log(typeof(sortValue));
         if (parseInt(event.target.value) === 2) {
             console.log("decreasing sort");
             for (let i = 0; i < data.length; i++) {
@@ -70,7 +64,6 @@ function ProductsContainer() {
                 }
             }
         } else {
-            // window.print()
             for (let i = 0; i < data.length; i++) {
                 for (let j = 0; j < data.length; j++) {
                     if (data[i].numberOfBuys > data[j].numberOfBuys) {
@@ -81,34 +74,22 @@ function ProductsContainer() {
                 }
             }
         }
-        // console.log(data);
         updateProductsData(data);
+        updateproductsValuePointer(0)
+        updatecurrentpage(1)
     }
-    useEffect(() => {
-        // sortTheProducts()
-    }, [])
-    const [priceValue, setValue] = useState([0, 500]);
 
+    let [priceValue, setValue] = useState([0, 500]);
     const handleChange = (event, newValue) => {
-        // console.log(newValue);
         setValue(newValue);
     };
-    function valuetext(value) {
-        return `$${value}`;
-    }
     function toggleFilterWindow(object) {
         let filter = document.getElementsByClassName('filtersContainer')[0]
-        // let productContainer = document.getElementsByClassName('ProductsContainer')[0]
-        // let filterButton = document.getElementsByClassName('filterhideandshow')[0]
         if (filter.style.display === 'none') {
             filter.style.display = 'block'
-            // productContainer.style.display = 'none'
-            // filterButton.innerHTML = "Apply"
 
         } else {
             filter.style.display = 'none'
-            // productContainer.style.display = 'block'
-            // filterButton.innerHTML = "Filter"
         }
     }
 
@@ -119,13 +100,9 @@ function ProductsContainer() {
         let color = document.getElementsByName('color')
         let minPrice = priceValue[0]
         let maxPrice = priceValue[1]
-        // console.log(minPrice)
-        // console.log(maxPrice);
         let typeFilters = [], collectionFilters = [], sizeFilters = [], colorFilters = [];
         type.forEach(value => {
-            // console.log(type);
             if (value.checked === true) {
-                // console.log(true);
                 typeFilters.push(value.value)
             }
         })
@@ -144,12 +121,7 @@ function ProductsContainer() {
                 colorFilters.push(value.value)
             }
         })
-        // console.log(typeFilters);
-        // console.log(collectionFilters);
-        // console.log(sizeFilters);
-        // console.log(colorFilters);
         let data = ProductData;
-        // console.log(data);
         let filteredData = []
         if (typeFilters.length === 0) {
             filteredData = data
@@ -162,7 +134,6 @@ function ProductsContainer() {
                 }
             })
         }
-        // console.log(filteredData);
         data = filteredData;
         filteredData = []
         if (collectionFilters.length === 0) {
@@ -176,7 +147,6 @@ function ProductsContainer() {
                 }
             })
         }
-        // console.log(filteredData);
         data = filteredData;
         filteredData = []
         if (sizeFilters.length === 0) {
@@ -191,7 +161,6 @@ function ProductsContainer() {
                 }
             })
         }
-        // console.log(filteredData);
         data = filteredData;
         filteredData = []
         if (colorFilters.length === 0) {
@@ -207,7 +176,6 @@ function ProductsContainer() {
                 }
             })
         }
-        // console.log(filteredData);
         data = filteredData;
         filteredData = []
         data.forEach(value => {
@@ -215,7 +183,6 @@ function ProductsContainer() {
                 filteredData.push(value)
             }
         })
-        // console.log(filteredData);
         if (window.innerWidth < 900) {
             toggleFilterWindow('block')
         }
@@ -224,11 +191,6 @@ function ProductsContainer() {
         updatetotalPages(Math.ceil(filteredData.length / ProductCountValue))
         updateproductsValuePointer(0)
     }
-
-
-
-
-
 
     return (
         <>
@@ -268,7 +230,6 @@ function ProductsContainer() {
                                     </Typography>
                                 </AccordionDetails>
                             </Accordion>
-
                             <Accordion className='filterItem'>
                                 <AccordionSummary
                                     expandIcon={<ExpandMoreIcon />}
@@ -282,18 +243,15 @@ function ProductsContainer() {
                                         <Box sx={{ width: 180, margin: "auto" }}>
                                             <Slider
                                                 max={500}
-                                                // getAriaLabel={() => 'Temperature range'}
                                                 value={priceValue}
                                                 onChange={handleChange}
                                                 valueLabelDisplay="auto"
-                                                // getAriaValueText={valuetext}
                                                 marks={[{ value: 0, label: "0 USD" }, { value: 500, label: "500 USD" }]}
                                             />
                                         </Box>
                                     </Typography>
                                 </AccordionDetails>
                             </Accordion>
-
                             <Accordion className='filterItem'>
                                 <AccordionSummary
                                     expandIcon={<ExpandMoreIcon />}
@@ -315,7 +273,6 @@ function ProductsContainer() {
                                     </Typography>
                                 </AccordionDetails>
                             </Accordion>
-
                             <Accordion className='filterItem'>
                                 <AccordionSummary
                                     expandIcon={<ExpandMoreIcon />}
@@ -390,16 +347,8 @@ function ProductsContainer() {
                                     </Typography>
                                 </AccordionDetails>
                             </Accordion>
-                            <Button variant='outlined' onClick={applyTheFilters} >Apply Filters</Button>
-
-
-
-
-
-
+                            <Button variant='outlined' onClick={applyTheFilters} style={{ margin: "30px auto" }}>Apply Filters</Button>
                         </div>
-
-
                     </div>
                 </Grid>
                 <Grid className='ProductsContainer' item xs={12} md={9}>
@@ -429,7 +378,7 @@ function ProductsContainer() {
                             ProductData && ProductsData.map((value, index) => {
                                 if (index >= productsValuePointer && index < (ProductCountValue + productsValuePointer)) {
                                     return (
-                                        <Product key={index} id={1250} image={value.image} title={value.title} price={value.finalPrice} discount={value.discount === 0 ? (false) : true} discountPercentage={value.discount} lastPrice={value.preFinalPrice} />
+                                        <Product key={index} id={value.id} image={value.image} title={value.title} price={value.finalPrice} discount={value.discount === 0 ? (false) : true} discountPercentage={value.discount} lastPrice={value.preFinalPrice} />
                                     )
                                 } else {
                                     return (<></>)

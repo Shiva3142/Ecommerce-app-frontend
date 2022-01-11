@@ -1,18 +1,7 @@
 @import "../../Scss/variables.scss";
 @import "../../Scss/mixins.scss";
 
-.ProductsPageContainer {
-    padding: 30px 0 30px 0;
-    .navActions img {
-        filter: invert(1);
-    }
-    .desktopNav a {
-        color: black;
-    }
-    .logo svg {
-        fill: black;
-    }
-}
+
 
 .productsContainerHeader {
     display: flex;
