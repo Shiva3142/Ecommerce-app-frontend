@@ -4,34 +4,34 @@ import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import ClearIcon from '@mui/icons-material/Clear';
 
-function CartProductContainer() {
-    let [counter, updatecounter] = useState(1)
+function CartProductContainer({data}) {
+    let [counter, updatecounter] = useState(data.count)
 
     return (
         <>
             <Grid item xs={1} md={1}>
                 <div className="cartItemImage">
-                    <img src="/products/img1.png" alt="" />
+                    <img src={data.image} alt="" />
                 </div>
             </Grid>
             <Grid item xs={4} md={4}>
                 <div className="cartItemName">
                     <h3>
-                        T-Shirt Summer Vibes
+                        {data.title}
                     </h3>
                     <p>
-                        #261311
+                        {data.product_id}
                     </p>
                 </div>
             </Grid>
             <Grid item xs={1} md={1}>
                 <h4>
-                    White
+                    {data.color}
                 </h4>
             </Grid>
             <Grid item xs={1} md={1}>
                 <h4>
-                    XL
+                    {data.size}
                 </h4>
             </Grid>
             <Grid item xs={2} md={2}>
@@ -51,7 +51,7 @@ function CartProductContainer() {
             </Grid>
             <Grid item xs={2} md={2}>
                 <h4 style={{ textAlign: "center" }}>
-                    $89.99
+                    ${data.finalPrice}
                 </h4>
             </Grid>
             <Grid item xs={1} md={1}>

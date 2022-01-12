@@ -1,15 +1,16 @@
 import React from 'react'
 
-function CheckoutProduct() {
+function CheckoutProduct({data}) {
+    // console.log(data);
     return (
         <div className="product">
             <img src="/products/img4.png" alt="" />
             <div className="description">
-                <h4>T-Shirt Summer Vibes</h4>
-                <p>#261311</p>
+                <h4>{data.title}</h4>
+                <p>{data.product_id}</p>
             </div>
             <div className="price">
-                $89.99
+                ${data.finalPrice}
             </div>
         </div>
     )

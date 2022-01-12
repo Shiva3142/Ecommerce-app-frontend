@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { Grid } from '@mui/material';
 import CartProductContainer from './CartProductContainer';
 
-function CartProducts() {
+function CartProducts({data}) {
     return (
         <>
             <div className='CartProductContainer'>
@@ -25,9 +25,15 @@ function CartProducts() {
                     </Grid>
                     <Grid item xs={1} md={1}>
                     </Grid>
-                    <CartProductContainer/>
-                    <CartProductContainer/>
-                    <CartProductContainer/>
+                    {
+                        data.map((value,index)=>{
+                            return(
+                                <CartProductContainer key={index} data={value}/>
+                            )
+                        })
+                    }
+                    {/* <CartProductContainer/> */}
+                    {/* <CartProductContainer/> */}
                 </Grid>
             </div>
 

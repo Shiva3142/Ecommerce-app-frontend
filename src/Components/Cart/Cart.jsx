@@ -1,8 +1,8 @@
 import { Container, Grid } from '@mui/material'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from '../Templates/Header'
 import CartData from './Assets/Data/cartData.json'
-import CartProduct from './CartProducts'
+import CartProducts from './CartProducts'
 import './Styles/Cart.scss'
 import CartImage from '../Templates/Assets/Cart.svg'
 import DeliveryVanIcon from '../Product/Assets/truck.svg'
@@ -11,12 +11,23 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { NavLink } from 'react-router-dom'
 
 function Cart() {
+    let [totalAmount, updatetotalAmount] = useState(0)
+    useEffect(() => {
+        if (CartData) {
+            let total = 0;
+            CartData.forEach(element => {
+                total = total + (element.finalPrice * element.count)
+            });
+            updatetotalAmount(total)
+        }
+    }, [])
+
     return (
         <div className='CartpageContainer'>
             <Header />
             <hr />
             {
-                JSON.stringify(CartData)
+                // JSON.stringify(CartData)
             }
             <Container>
                 <div className="cartHeader">
@@ -32,7 +43,14 @@ function Cart() {
                     </div>
                 </div>
                 <div className="ScrollebleCartContainer">
-                    <CartProduct />
+                    {
+                        CartData && CartData.length !== 0 ? (<>
+                            <CartProducts data={CartData} />
+                        </>) : (
+                            <>
+                            </>
+                        )
+                    }
                 </div>
                 <div className="CartPageFooter">
                     <NavLink to="/" className="backOption">
@@ -53,7 +71,7 @@ function Cart() {
                                 Total cost
                             </span>
                             <span>
-                                $159,98
+                                ${totalAmount.toFixed(2)}
                             </span>
                         </div>
                         <div>

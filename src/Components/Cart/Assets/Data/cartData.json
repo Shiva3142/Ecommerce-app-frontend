@@ -1,1 +1,22 @@
-[]
+[
+    {
+        "id":1,
+        "product_id":261311,
+        "title": "Basic Slim Fit T-Shirt",
+        "image": "/products/img4.png",
+        "finalPrice": 429.99,
+        "size": "M",
+        "color": "white",
+        "count":3
+    },
+    {
+        "id":2,
+        "product_id":261312,
+        "title": "Loose Textured T-Shirt",
+        "image": "/products/img2.png",
+        "finalPrice": 119.99,
+        "size": "XXL",
+        "color": "black",
+        "count":6
+    }
+]

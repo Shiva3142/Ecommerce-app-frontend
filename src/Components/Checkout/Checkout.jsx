@@ -1,5 +1,5 @@
 import { Container, Grid } from '@mui/material'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Styles/Checkout.scss'
 import Header from '../Templates/Header'
 import Success from './Success'
@@ -11,9 +11,10 @@ import VisaIcon from './Assets/visa.png'
 import CheckoutProduct from './CheckoutProduct'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { NavLink } from 'react-router-dom'
+import CartData from '../Cart/Assets/Data/cartData.json'
 
 function Checkout() {
-    let [checkoutSuccess, updatecheckoutSuccess] = useState(true)
+    let [checkoutSuccess, updatecheckoutSuccess] = useState(false)
     let [userdata, updateuserdata] = useState({
         fname: "",
         lname: "",
@@ -32,6 +33,17 @@ function Checkout() {
             })
         })
     }
+    let [totalAmount, updatetotalAmount] = useState(0)
+    useEffect(() => {
+        if (CartData) {
+            let total = 0;
+            CartData.forEach(element => {
+                total = total + (element.finalPrice * element.count)
+            });
+            updatetotalAmount(total)
+        }
+    }, [])
+
     return (
         <div className='CheckoutCotainer'>
             <Header />
@@ -39,7 +51,7 @@ function Checkout() {
             <Container>
                 {
                     checkoutSuccess ? (<>
-                        <Success />
+                        <Success CartData={CartData} totalAmount={totalAmount}/>
                     </>) : (
                         <>
                             <div className="CheckoutDetailsContainer">
@@ -119,18 +131,42 @@ function Checkout() {
                                             <div className='ProductReviewContainer'>
                                                 <h4>Your cart</h4>
                                                 <div className="productsContainer">
-                                                    <CheckoutProduct />
-                                                    <CheckoutProduct />
-                                                    <CheckoutProduct />
+                                                    {
+                                                        CartData && CartData.length !== 0 ? (<>
+                                                            {
+                                                                CartData.map((value, index) => {
+                                                                    return (
+                                                                        <CheckoutProduct key={index} data={value} />
+                                                                    )
+                                                                })
+                                                            }
+                                                        </>) : (
+                                                            <>
+                                                            </>
+                                                        )
+                                                    }
+                                                    {/* <CheckoutProduct />
+                                                    <CheckoutProduct /> */}
                                                 </div>
                                                 <div className="totalContainer">
                                                     <span>Total cost</span>
-                                                    <span><strong>$159.98</strong></span>
+                                                    <span><strong>${totalAmount.toFixed(2)}</strong></span>
                                                 </div>
                                                 <div className="freDeliverysection">
                                                     <img src={DeliveryVanIcon} alt="" />
-                                                    <p>
-                                                        You are $30,02 away from free shipping!
+                                                    <p> 
+                                                        {
+                                                            totalAmount<200?(
+                                                                <>
+                                                                You are ${200-totalAmount.toFixed(2)} away from free shipping!
+                                                                
+                                                                </>
+                                                            ):(
+                                                                <>
+                                                                You are eligible for free shipping!
+                                                                </>
+                                                            )
+                                                        }
                                                     </p>
                                                 </div>
                                             </div>
@@ -146,7 +182,7 @@ function Checkout() {
                                     </NavLink>
                                     <div className="checkoutButtons">
                                         <button>Continue shopping</button>
-                                        <button>Proceed to payment</button>
+                                        <button onClick={()=>{updatecheckoutSuccess(true)}}>Proceed to payment</button>
                                     </div>
                                 </div>
                             </div>
