@@ -10,11 +10,11 @@ import ClearIcon from '@mui/icons-material/Clear';
 import { NavLink } from 'react-router-dom';
 function Header() {
     function toggleNavbar(event) {
-        let leftnav=document.getElementById('leftNav')
-        if (leftnav.style.left==='-250px') {
-            leftnav.style.left="0px"
+        let leftnav = document.getElementById('leftNav')
+        if (leftnav.style.left === '-250px') {
+            leftnav.style.left = "0px"
         } else {
-            leftnav.style.left="-250px"
+            leftnav.style.left = "-250px"
         }
     }
     return (
@@ -22,7 +22,7 @@ function Header() {
             <Container className='headerContainer'>
                 <header>
                     <div className="logo">
-                        <DehazeIcon className='navbarOptionBtn' id="navbarOptionBtn" onClick={toggleNavbar}/>
+                        <DehazeIcon className='navbarOptionBtn' id="navbarOptionBtn" onClick={toggleNavbar} />
                         <NavLink to="/"> <img src={Logo} alt="Logo" /></NavLink>
                     </div>
                     <nav className='desktopNav'>
@@ -32,11 +32,13 @@ function Header() {
                     </nav>
                     <div className="navActions">
                         <img src={Search} alt="Search" />
-                        <img src={Cart} alt="Cart" />
+                        <NavLink to="/cart">
+                            <img src={Cart} alt="Cart" />
+                        </NavLink>
                         <img src={Avtar} alt="Avtar" />
                     </div>
                     <nav id='leftNav'>
-                        <ClearIcon id="hideNavBar" onClick={toggleNavbar}/>
+                        <ClearIcon id="hideNavBar" onClick={toggleNavbar} />
                         <a href="#men">Men</a>
                         <a href="#women">Women</a>
                         <a href="#kids">Kids</a>

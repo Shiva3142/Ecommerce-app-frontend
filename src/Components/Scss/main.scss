@@ -1,7 +1,15 @@
-.ProductsPageContainer ,.ProductPageContainer{
-    padding: 30px 0 30px 0;
+@import "./mixins.scss";
+
+.ProductsPageContainer,
+.ProductPageContainer,
+.CartpageContainer,
+.CheckoutCotainer {
+    padding: 20px 0 30px 0;
     .navActions img {
         filter: invert(1);
+    }
+    .navActions a {
+        @include content-center;
     }
     .desktopNav a {
         color: black;
@@ -9,4 +17,10 @@
     .logo svg {
         fill: black;
     }
+}
+
+hr {
+    color: #80808038;
+    border: 0.001em solid #ebebebad;
+    margin: 20px 0 40px 0;
 }

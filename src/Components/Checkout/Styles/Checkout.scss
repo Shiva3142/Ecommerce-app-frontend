@@ -1,0 +1,263 @@
+@import "../../Scss/variables.scss";
+@import "../../Scss/mixins.scss";
+
+
+.CheckoutCotainer{
+    hr{
+        margin-bottom: 0;
+    }
+}
+
+
+.CheckoutDetailsContainer {
+    margin: 30px;
+
+    .cartHeader {
+        margin: 20px auto;
+        h2 {
+            font-size: 1em;
+            @media screen and (max-width: $minimum_mobile_limit) {
+                font-size: 0.7em;
+            }
+        }
+        .cartHeaderProgress {
+            .cartstage {
+                border: 1px solid #7ad0a7;
+                background: transparent;
+                img {
+                    filter: invert(1);
+                }
+            }
+            .deliverystage {
+                @include content-center;
+                padding: 7px;
+                border-radius: 50%;
+                background-color: #7ad0a7;
+                img {
+                    width: 17px;
+                    height: 17px;
+                    filter: invert(1);
+                }
+            }
+        }
+    }
+    .checkoutArea {
+        .contactForm {
+            margin: 20px auto;
+            @media screen and (max-width: $mobile_limit) {
+                @include content-center;
+                flex-direction: column;
+            }
+            .signupInfo {
+                button {
+                    padding: 10px 40px;
+                    border-radius: 30px;
+                    margin: 10px;
+                    border: none;
+                }
+                button:first-child {
+                    background: #7ad0a7;
+                    color: white;
+                }
+                button:last-child {
+                    background: transparent;
+                    border: 1px solid gray;
+                }
+                @media screen and (max-width: $mobile_limit) {
+                    button {
+                        padding: 8px 30px;
+                        border-radius: 30px;
+                        margin: 8px;
+                    }
+                }
+            }
+            .shippingInfo {
+                margin: 10px 0;
+                h4 {
+                    margin: 20px 0;
+                    font-weight: 500;
+                    @media screen and (max-width: $mobile_limit) {
+                        margin: 20px 10px;
+                    }
+                }
+
+                .inputs {
+                    display: flex;
+                    input,
+                    select {
+                        font-size: 0.7em;
+                        min-width: 220px;
+                        padding: 8px 25px;
+                        margin: 10px 10px 10px 0;
+                        border-radius: 30px;
+                        border: 1px solid rgba(95, 95, 95, 0.411);
+                    }
+                    select {
+                        width: 220px;
+                    }
+                    @media screen and (max-width: $medium_size_limit) {
+                        @include content-center;
+                        input,
+                        select {
+                            font-size: 0.5em;
+                            min-width: 180px;
+                            padding: 8px 25px;
+                            margin: 5px;
+                            border-radius: 30px;
+                        }
+                        select {
+                            width: 180px;
+                        }
+                    }
+                    @media screen and (max-width: $minimum_mobile_limit) {
+                        @include content-center;
+                        input,
+                        select {
+                            font-size: 0.4em;
+                            min-width: 130px;
+                            padding: 8px 15px;
+                        }
+                        select {
+                            width: 130px;
+                        }
+                    }
+                }
+            }
+        }
+        .PaymentOptionContainer {
+            padding: 0 30px;
+            // margin: auto;
+
+            @media screen and (max-width: $mobile_limit) {
+                width: 200px;
+                @include content-center;
+                width: 100%;
+                flex-direction: column;
+            }
+            h4 {
+                font-weight: 500;
+            }
+            .paymentoption {
+                border: 1px solid #7ad0a7;
+                border-radius: 30px;
+                min-width: 200px;
+                margin: 20px 0;
+                padding: 10px 20px;
+                @include content-between;
+                img {
+                    max-width: 45px;
+                }
+                span {
+                    width: 60px;
+                    font-size: 0.8em;
+                }
+            }
+        }
+    }
+}
+.CheckoutContainerFooter{
+    margin: 20px auto;
+    @include content-between;
+    @media screen and (max-width: $mobile_limit) {
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+        margin: 10px 0;
+    }
+    
+    .backOption{
+        @include content-between;
+        min-width: 80px;
+        margin: 10px;
+    }
+    .checkoutButtons{
+        button{
+            padding: 12px 30px;
+            border-radius: 30px;
+            border: none;
+            background-color: transparent;
+            margin:10px   20px;
+            @media screen and (max-width: $mobile_limit) {
+                font-size: 0.6em;
+                margin: 10px;
+                padding: 10px 15px;
+            }
+            @media screen and (max-width: $minimum_mobile_limit) {
+                margin: 5px;
+                padding: 10px 10px;
+            }
+        }
+        button:first-child{
+            border: 1px solid black;
+        }
+        button:last-child{
+            color: white;
+            background: #7AD0A7;
+        }
+    }
+}
+
+.productsContainer{
+    @media screen and (min-width: $mobile_limit) {
+        max-height: 60vh;
+        overflow-x: auto;
+    }
+}
+
+
+
+
+
+
+
+
+//product styles
+
+.ProductReviewContainer {
+    padding: 0 10px;
+    h4 {
+        font-weight: 500;
+        margin: 10px 0;
+    }
+    .product {
+        margin: 10px 0;
+        min-width: 250px;
+        @include content-between;
+        img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: top;
+        }
+        .description {
+            width: 50%;
+            h4 {
+                font-weight: bolder;
+                font-size: 0.8em;
+            }
+            p {
+                font-size: 0.8em;
+                color: rgba(128, 128, 128, 0.555);
+            }
+        }
+        .price {
+            font-weight: 600;
+        }
+    }
+    .totalContainer {
+        background: #f1f1f1;
+        padding: 20px 30px;
+        border-radius: 30px;
+        width: 230px;
+        margin: 30px auto;
+        @include content-between;
+    }
+    .freDeliverysection {
+        width: 250px;
+        @include content-center;
+        margin: auto;
+        p {
+            margin: 0 20px;
+        }
+    }
+}

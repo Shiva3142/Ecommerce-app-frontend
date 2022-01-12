@@ -12,6 +12,7 @@ function Products() {
         <>
             <div className="ProductsPageContainer">
                 <Header />
+                <hr />
                 <Container style={{ margin: "30px auto" }}>
                     <Breadcrumbs aria-label="breadcrumb">
                         <Link underline="hover" color="inherit" href="/">

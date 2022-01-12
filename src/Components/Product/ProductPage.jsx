@@ -39,6 +39,7 @@ function Product() {
         </Container>
         <div className='ProductPageContainer'>
             <Header />
+            <hr />
             {
                 productDetails ? (<>
                     <Container style={{ margin: "40px auto" }}>
