@@ -20,7 +20,7 @@ function CartProductContainer({data}) {
                         {data.title}
                     </h3>
                     <p>
-                        {data.product_id}
+                        #{data.product_id}
                     </p>
                 </div>
             </Grid>
