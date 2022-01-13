@@ -1,5 +1,6 @@
-@import "../../Scss/variables.scss";
-    
+@import "../variables.scss";
+@import "../mixins.scss";
+
 .ArrivalContainer {
     min-height: 20vh;
 }
@@ -8,7 +9,7 @@
             rgba(29, 29, 29, 0.285),
             rgba(29, 29, 29, 0.285)
         ),
-        url("../Assets/arrivals.png") no-repeat;
+        url("../../Assets/Home/arrivals.png") no-repeat;
     background-size: cover;
     min-height: 40vh;
 }
@@ -18,7 +19,7 @@
             rgba(29, 29, 29, 0.285),
             rgba(29, 29, 29, 0.285)
         ),
-        url("../Assets/basics.png") no-repeat;
+        url("../../Assets/Home/basics.png") no-repeat;
     background-size: cover;
     min-height: 40vh;
 }
@@ -28,7 +29,7 @@
             rgba(29, 29, 29, 0.285),
             rgba(29, 29, 29, 0.285)
         ),
-        url("../Assets/sale.png") no-repeat;
+        url("../../Assets/Home/sale.png") no-repeat;
     background-size: cover;
     min-height: 40vh;
 }

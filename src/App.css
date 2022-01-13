@@ -15,6 +15,7 @@
 a,
 svg,
 button,
-label {
+label,
+img {
     cursor: pointer;
 }

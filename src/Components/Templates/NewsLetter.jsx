@@ -1,6 +1,6 @@
 import { Button, Container, Grid } from '@mui/material'
 import React from 'react'
-import './Styles/NewsLetter.scss'
+import '../../Styles/Templates/NewsLetter.scss'
 
 function NewsLetter() {
     return (

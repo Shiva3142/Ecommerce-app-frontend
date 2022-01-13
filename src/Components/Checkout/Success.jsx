@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
-import SuccessImage from './Assets/success.png'
 import CheckoutProduct from './CheckoutProduct'
-import './Styles/Success.scss'
-import CartImage from '../Templates/Assets/Cart.svg'
-import DeliveryVanIcon from '../Product/Assets/truck.svg'
+import '../../Styles/Checkout/Success.scss'
+import SuccessImage from '../../Assets/Checkout/success.png'
+import CartImage from '../../Assets/Templates/Cart.svg'
+import DeliveryVanIcon from '../../Assets/Product/truck.svg'
+
 function Success({ CartData, totalAmount }) {
     return (
         <>
             <div className="successPage">
-
                 <div className="CheckoutSuccessContainer">
                     <div className='SuccessImage'>
                         <img src={SuccessImage} alt="" />

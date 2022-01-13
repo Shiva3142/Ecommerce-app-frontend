@@ -1,5 +1,5 @@
 import React from 'react'
-import './Styles/BasicProduct.scss'
+import '../../Styles/Templates/BasicProduct.scss'
 function BasicProduct(object) {
     return (
         <div className='basicProduct'>

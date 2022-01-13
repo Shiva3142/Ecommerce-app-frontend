@@ -3,19 +3,22 @@
 .ProductsPageContainer,
 .ProductPageContainer,
 .CartpageContainer,
-.CheckoutCotainer {
+.CheckoutCotainer,
+.LoginPageContainer,
+.AboutPageContainer,
+.AccountPageContainer {
     padding: 20px 0 30px 0;
     .navActions img {
         filter: invert(1);
-    }
-    .navActions a {
-        @include content-center;
     }
     .desktopNav a {
         color: black;
     }
     .logo svg {
         fill: black;
+    }
+    .search {
+        border: 1px solid gray;
     }
 }
 

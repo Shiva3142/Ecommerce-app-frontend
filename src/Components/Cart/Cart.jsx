@@ -1,14 +1,14 @@
-import { Container, Grid } from '@mui/material'
+import { Container } from '@mui/material'
 import React, { useEffect, useState } from 'react'
+import { NavLink } from 'react-router-dom'
 import Header from '../Templates/Header'
-import CartData from './Assets/Data/cartData.json'
+import CartData from '../../Assets/Cart/Data/cartData.json'
 import CartProducts from './CartProducts'
-import './Styles/Cart.scss'
-import CartImage from '../Templates/Assets/Cart.svg'
-import DeliveryVanIcon from '../Product/Assets/truck.svg'
+import '../../Styles/Cart/Cart.scss'
+import CartImage from '../../Assets/Templates/Cart.svg'
+import DeliveryVanIcon from '../../Assets/Product/truck.svg'
 import SendIcon from '@mui/icons-material/Send';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { NavLink } from 'react-router-dom'
 
 function Cart() {
     let [totalAmount, updatetotalAmount] = useState(0)

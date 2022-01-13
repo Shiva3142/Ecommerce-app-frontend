@@ -3,17 +3,17 @@ import React, { useEffect } from 'react'
 import Footer from '../Templates/Footer'
 import Header from '../Templates/Header'
 import NewsLetter from '../Templates/NewsLetter'
-import './Styles/HomePage.scss'
+import '../../Styles/Home/HomePage.scss'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import LocalShippingOutlinedIcon from '@mui/icons-material/LocalShippingOutlined';
-import Garentee from './Assets/garentee.svg';
-import Happy from './Assets/happy.svg';
+import Garentee from '../../Assets/Home/garentee.svg';
+import Happy from '../../Assets/Home/happy.svg';
 import BasicProduct from '../Templates/BasicProduct';
-import Image1 from './Assets/products/img1.png';
-import Image2 from './Assets/products/img2.png';
-import Image3 from './Assets/products/img3.png';
-import Image4 from './Assets/products/img4.png';
+import Image1 from '../../Assets/Home/products/img1.png';
+import Image2 from '../../Assets/Home/products/img2.png';
+import Image3 from '../../Assets/Home/products/img3.png';
+import Image4 from '../../Assets/Home/products/img4.png';
 import Arrivals from './Arrivals';
 import ChoodingReason from './ChoodingReason';
 import RecommendProducts from './RecommendProducts'

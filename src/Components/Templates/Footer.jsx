@@ -1,12 +1,12 @@
 import { Container, Grid } from '@mui/material'
 import React from 'react'
-import './Styles/Footer.scss'
+import '../../Styles/Templates/Footer.scss'
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
-import EcommerceTag from './Assets/E-commerce-tag.svg';
+import EcommerceTag from '../../Assets/Templates/E-commerce-tag.svg';
 function Footer() {
     return (
         <>

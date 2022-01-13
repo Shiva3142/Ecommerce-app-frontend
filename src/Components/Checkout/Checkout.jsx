@@ -1,17 +1,17 @@
 import { Container, Grid } from '@mui/material'
 import React, { useEffect, useState } from 'react'
-import './Styles/Checkout.scss'
+import { NavLink } from 'react-router-dom'
+import '../../Styles/Checkout/Checkout.scss'
 import Header from '../Templates/Header'
 import Success from './Success'
-import CartImage from '../Templates/Assets/Cart.svg'
-import DeliveryVanIcon from '../Product/Assets/truck.svg'
-import Countries from './Assets/Data/countries.json'
-import PaypalIcon from './Assets/paypal.png'
-import VisaIcon from './Assets/visa.png'
+import CartImage from '../../Assets/Templates/Cart.svg'
+import DeliveryVanIcon from '../../Assets/Product/truck.svg'
+import Countries from '../../Assets/Checkout/Data/countries.json'
+import PaypalIcon from '../../Assets/Checkout/paypal.png'
+import VisaIcon from '../../Assets/Checkout/visa.png'
 import CheckoutProduct from './CheckoutProduct'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { NavLink } from 'react-router-dom'
-import CartData from '../Cart/Assets/Data/cartData.json'
+import CartData from '../../Assets/Cart/Data/cartData.json'
 
 function Checkout() {
     let [checkoutSuccess, updatecheckoutSuccess] = useState(false)

@@ -1,0 +1,165 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+.homeOption {
+    .backOption {
+        width: 120px;
+        font-size: 0.8em;
+        @include content-between;
+        svg {
+            width: 0.8em;
+        }
+    }
+}
+.loginContainer {
+    @include content-center;
+}
+
+.signinForm {
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    p,
+    h2 {
+        text-align: center;
+        margin: 10px;
+        font-size: 80%;
+    }
+    p{
+        margin-bottom: 30px;
+    }
+    h2 {
+        font-size: 1.3em;
+        font-weight: 600;
+    }
+    .options {
+        @include content-between;
+        label {
+            @include content-center;
+            span {
+                font-weight: 600;
+                margin: 0 10px;
+            }
+        }
+        div{
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        font-size: 0.8em;
+    }
+    >input {
+        padding: 15px 30px;
+        margin: 10px 0;
+        border-radius: 30px;
+        border: 1px solid #d8d8d8;
+        background: transparent;
+    }
+    .otheroptions{
+        @include content-between;
+        margin: 20px 0;
+        >div{
+            @include content-center;
+            width: 180px;
+            padding: 15px 10px ;
+            border: none;
+            border-radius: 30px;
+            span{
+                margin:  0 10px;
+            }
+            font-weight: 600;
+        }
+        >div:first-child{
+            background: #3B5998;
+            span{
+                color: white;
+            }
+        }
+        >div:last-child{
+            background: white;
+            border: 1px solid #F1584D;
+        }
+    }
+    >button{
+        padding: 15px 30px;
+        background-color: #7AD0A7;
+        border: none;
+        border-radius: 30px;
+        color: white;
+    }
+    .bottom{
+        margin: 8px;
+        cursor: pointer;
+        @include content-center;
+        font-size: 0.8em;
+        span{
+            margin: 0 15px;
+            font-weight: 600;
+        }
+    }
+    @media screen and (max-width:$minimum_mobile_limit){
+        max-width: 300px;
+        .otheroptions{
+            margin: 20px 0;
+            >div{
+                @include content-center;
+                width: 120px;
+                font-size: 0.7em;
+                padding: 10px 10px ;
+                border: none;
+                border-radius: 30px;
+                span{
+                    margin:  0 10px;
+                }
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+.registerForm{
+    .options{
+        font-size: 0.7em;
+        margin: 0px;
+
+    }
+    >button{
+        margin: 30px 0 10px 0;
+    }
+}
+
+.forgotPasswordForm{
+    .orcontainer{
+        margin: 10px;
+        @include content-between;
+        div{
+            border: 1px solid #D8D8D8;
+            width: 100%;
+        }
+        span{
+            margin: 0 40px;
+        }
+    }
+    .numberInput{
+        border: 1px solid #D8D8D8;
+        border-radius: 30px;
+        padding: 15px 30px;
+        display: flex;
+        margin: 10px 0;
+        >input{
+            border: none;
+            width: 100%;
+            margin: 0 10px;
+        }
+        >select{
+            border: none;
+        }
+    }
+    >button{
+        margin: 15px 0;
+    }
+    .bottom{
+        span{
+            text-decoration: underline;
+        }
+    }
+}

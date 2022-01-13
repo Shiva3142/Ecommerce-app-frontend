@@ -4,13 +4,13 @@ import RecommendProducts from '../Home/RecommendProducts'
 import Footer from '../Templates/Footer'
 import Header from '../Templates/Header'
 import NewsLetter from '../Templates/NewsLetter'
-import './Styles/ProductPage.scss'
-import ProductData from '../Products/Assets/Data/ProductsData.json';
+import '../../Styles/Product/ProductPage.scss'
 import { Breadcrumbs, Container, Link } from '@mui/material'
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import ProductDetails from './ProductDetails'
-import Truck from './Assets/truck.svg'
-import Delivery from './Assets/delivery.svg'
+import Truck from '../../Assets/Product/truck.svg'
+import Delivery from '../../Assets/Product/delivery.svg'
+import ProductData from '../../Assets/Products/Data/ProductsData.json';
 
 
 function Product() {
@@ -21,7 +21,8 @@ function Product() {
             console.log("useeffect");
             for (let index = 0; index < ProductData.length; index++) {
                 if (ProductData[index].id === parseInt(product_id)) {
-                    updateProductDetails(ProductData[index])
+                    updateProductDetails(ProductData[index]);
+                    break;
                 }
             }
         } catch (error) {

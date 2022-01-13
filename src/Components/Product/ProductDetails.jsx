@@ -3,19 +3,22 @@ import React, { useState } from 'react'
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import PaperImage from './Assets/paper.png'
-import MaterialImage from './Assets/material.png'
-import MaterialDesc from './Assets/mateialDesc.png'
+import PaperImage from '../../Assets/Product/paper.png'
+import MaterialImage from '../../Assets/Product/material.png'
+import MaterialDesc from '../../Assets/Product/mateialDesc.png'
 function ProductDetails(object) {
-    let [counter,updatecounter]=useState(1)
-    let [size,updateSize]=useState("")
+    let [counter, updatecounter] = useState(1)
+    let [size, updateSize] = useState("")
     console.log(object);
     return (
         <div className='productDetailsContainer'>
             <Grid container spacing={2}>
                 <Grid item xs={12} md={6}>
                     <div className='ProductDetailsImageContainer'>
-                        <img src={object.data.image} alt="" className="img1" />
+                        <div className="imageOptions">
+                            <img src={object.data.image} alt="" className="img1" />
+                            <img src={object.data.image} alt="" className="img1" />
+                        </div>
                         <img src={object.data.image} alt="" className="img2" />
                     </div>
                 </Grid>
@@ -66,7 +69,7 @@ function ProductDetails(object) {
                             </div>
                         </div>
                         <p style={{ margin: "50px 0 5px 0" }}>Size :</p>
-                        <select name="size" id="size" value={size} onChange={(event)=>{
+                        <select name="size" id="size" value={size} onChange={(event) => {
                             updateSize(event.target.value)
                         }}>
                             <option value="">CHOOSE SIZE</option>
@@ -80,17 +83,17 @@ function ProductDetails(object) {
                         <p style={{ margin: "40px 0 5px 0" }}>Quantity :</p>
                         <div className="cartOption">
                             <div className="Counter">
-                                <RemoveIcon style={{ fill: "gray" }} onClick={()=>{
-                                    if(counter!==1){
-                                        updatecounter(counter-1)
+                                <RemoveIcon style={{ fill: "gray" }} onClick={() => {
+                                    if (counter !== 1) {
+                                        updatecounter(counter - 1)
                                     }
-                                }}/>
+                                }} />
                                 <span>{counter}</span>
-                                <AddIcon onClick={()=>{
-                                    if(counter!==100){
-                                        updatecounter(counter+1)
+                                <AddIcon onClick={() => {
+                                    if (counter !== 100) {
+                                        updatecounter(counter + 1)
                                     }
-                                }}/>
+                                }} />
                             </div>
                             <div className="addtocart">
 
@@ -119,7 +122,7 @@ function ProductDetails(object) {
                         <img src={MaterialImage} alt="" />
                         <h5>Details and product description</h5>
                         <p>Body: 98% COTTON - 2% ELASTANE.</p>
-                        <img style={{width:"200px"}} src={MaterialDesc} alt="" />
+                        <img style={{ width: "200px" }} src={MaterialDesc} alt="" />
                     </div>
                 </div>
             </div>

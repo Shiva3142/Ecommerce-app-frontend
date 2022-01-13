@@ -1,9 +1,9 @@
 import { Container, Grid } from '@mui/material'
 import React from 'react'
-import './Styles/ChoodingReason.scss'
-import Garentee from './Assets/garentee.svg'
-import Quality from './Assets/quality.svg'
-import Payment from './Assets/payment.svg'
+import '../../Styles/Home/ChoodingReason.scss'
+import Garentee from '../../Assets/Home/garentee.svg'
+import Quality from '../../Assets/Home/quality.svg'
+import Payment from '../../Assets/Home/payment.svg'
 import LocalShippingOutlinedIcon from '@mui/icons-material/LocalShippingOutlined';
 
 function ChoodingReason() {

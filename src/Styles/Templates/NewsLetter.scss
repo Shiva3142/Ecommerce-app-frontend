@@ -1,7 +1,8 @@
-@import "../../Scss/variables.scss";
+@import "../variables.scss";
+@import "../mixins.scss";
 
 .newdLetterContainer{
-    background:linear-gradient(rgba(39, 39, 39, 0.253),rgba(61, 61, 61, 0.279)), url('../Assets/NewsLetterBackground.png');
+    background:linear-gradient(rgba(39, 39, 39, 0.253),rgba(61, 61, 61, 0.279)), url("../../Assets/Templates/NewsLetterBackground.png");
     background-size: cover;
     border-radius: 5px;
     margin: 50px auto;
@@ -13,7 +14,7 @@
         padding: 20px;
         h1{
             color: white;
-            font-weight: 400;
+            font-weight: 400;   
         }
     }
     .subscribeButton{

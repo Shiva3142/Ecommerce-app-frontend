@@ -1,6 +1,6 @@
 import { Button, Container, Grid } from '@mui/material'
 import React from 'react'
-import './Styles/Arrivals.scss'
+import '../../Styles/Home/Arrivals.scss'
 
 function Arrivals() {
     return (

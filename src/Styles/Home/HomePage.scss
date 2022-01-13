@@ -1,12 +1,11 @@
-@import "../../Scss/variables.scss";
-@import "../../Scss/mixins.scss";
-
+@import "../variables.scss";
+@import "../mixins.scss";
 .HomeContainer {
     background: linear-gradient(
             rgba(44, 44, 44, 0.137),
             rgba(34, 34, 34, 0.288)
         ),
-        url("../Assets/Home_Image.png") no-repeat fixed;
+        url("../../Assets/Home/Home_Image.png") no-repeat fixed;
     background-size: cover;
     min-height: 85vh;
     padding: 30px 0px 0px 0px;

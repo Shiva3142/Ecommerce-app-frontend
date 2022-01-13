@@ -1,11 +1,11 @@
 import { Accordion, AccordionDetails, AccordionSummary, Alert, Box, Button, Grid, Slider, Typography } from '@mui/material'
-import React, { useEffect, useState } from 'react'
-import './Styles/ProductsContainer.scss'
+import React, { useState } from 'react'
+import '../../Styles/Products/ProductsContainer.scss'
 
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ClearIcon from '@mui/icons-material/Clear';
 import Product from './Product';
-import ProductData from './Assets/Data/ProductsData.json';
+import ProductData from '../../Assets/Products/Data/ProductsData.json';
 
 function ProductsContainer() {
     let [ProductsData, updateProductsData] = useState(ProductData);
