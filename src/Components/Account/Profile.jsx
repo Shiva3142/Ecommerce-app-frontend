@@ -29,7 +29,6 @@ function Profile() {
             Addressform.style.maxHeight="0px"
             
         }
-
     }
     function togglePhoneUpdateForm(event) {
         let phoneInput=document.getElementById('phoneInput');
