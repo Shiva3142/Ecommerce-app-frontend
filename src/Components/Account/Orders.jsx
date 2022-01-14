@@ -91,19 +91,19 @@ function Orders() {
                                 <div className="trackingButton">
                                     <Button variant="contained" onClick={showTracking}>
                                         {
-                                            orderPage.order.date_of_delivery?(
+                                            orderPage.order.date_of_delivery ? (
                                                 <>
-                                                See Tracking
+                                                    See Tracking
                                                 </>
-                                            ):(
+                                            ) : (
                                                 <>
-                                                Track Package
+                                                    Track Package
                                                 </>
                                             )
                                         }
-                                        
-                                        
-                                        </Button>
+
+
+                                    </Button>
                                 </div>
                                 <div id="trackingContainer">
                                     <h5>Order Tracking</h5>
@@ -131,7 +131,7 @@ function Orders() {
                                                         </div>
                                                         <div className="value lighttext">
                                                             {orderPage.order.date_of_shipping}
-                                                            <div className='lighttext'>Your Order is successfully Shippig From are End</div>
+                                                            <div className='lighttext'>Your Order is successfully Shipped From are End</div>
                                                         </div>
                                                         {
                                                             orderPage.order.messages_after_shiping && orderPage.order.messages_after_shiping.map((element, index) => {
