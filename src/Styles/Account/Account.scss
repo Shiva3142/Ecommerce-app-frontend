@@ -1,0 +1,231 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+.accountContainer {
+    display: flex;
+    .accountOptions {
+        border: 1px solid #80808060;
+        .option {
+            @include content-center;
+            padding: 10px;
+            cursor: pointer;
+            span {
+                padding: 10px;
+            }
+        }
+        .option {
+            border-bottom: 1px solid gray;
+        }
+    }
+    .detailContainer {
+        @include content-between;
+        border: 1px solid rgba(128, 128, 128, 0.356);
+        // background: aqua;
+        padding: 5px;
+        margin: 10px 0;
+        .field {
+            min-width: 60px;
+        }
+        .value {
+            width: 100%;
+            padding: 0 20px;
+        }
+        .update {
+            background-color: coral;
+            color: white;
+            padding: 3px 10px;
+            cursor: pointer;
+        }
+    }
+    #phoneInput {
+        max-height: 0px;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+    }
+    #updatephone {
+        display: flex;
+        justify-content: space-between;
+        border: 1px solid #80808060;
+        input {
+            border: none;
+            padding: 8px 10px;
+            width: 100%;
+        }
+        button {
+            padding: 5px 10px;
+            border: none;
+            background-color: #7ad0a7;
+            color: white;
+        }
+    }
+    .ordersContainer,
+    .profileContainer {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #80808060;
+        > h3 {
+            font-weight: 100;
+        }
+    }
+}
+
+.profileContainer {
+    #Addressform {
+        margin: 20px;
+        display: flex;
+        max-width: 400px;
+        flex-direction: column;
+        margin: auto;
+        max-height: 0px;
+        overflow: hidden;
+        transition: max-height 0.2s;
+        h4 {
+            text-align: center;
+            margin: 10px;
+        }
+        textarea {
+            padding: 20px;
+            border-radius: 10px;
+        }
+        input,
+        select {
+            padding: 10px 20px;
+            margin: 10px 0;
+            border-radius: 30px;
+            border: 1px solid #80808060;
+        }
+        button {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 30px;
+            border: none;
+            background: #7ad0a7;
+        }
+    }
+}
+
+@media screen and (max-width: $mobile_limit) {
+    .accountContainer {
+        flex-direction: column;
+        .accountOptions {
+            // position: absolute;
+            background-color: white;
+            @include content-center;
+            // width: 50px;
+            .option {
+                border-bottom: none !important;
+            }
+        }
+        .profileContainer {
+            .detailContainer {
+                font-size: 0.7em;
+            }
+        }
+        .ordersContainer {
+            font-size: 0.9em;
+        }
+    }
+}
+
+// order Product Styles
+.ordersContainer {
+    .backOption {
+        width: fit-content;
+        @include content-center;
+        cursor: pointer;
+    }
+    .order {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        margin: 20px 0;
+        border: 1px solid #80808038;
+        padding: 10px 0;
+        img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            object-position: top;
+            border-radius: 50%;
+            margin: 10px;
+        }
+        .info button {
+            font-size: 0.6em;
+            margin: 10px 0;
+            padding: 5px 10px;
+        }
+    }
+    .orderDetails {
+        padding: 0 20px;
+        h5 {
+            background: #7ad0a7;
+            padding: 10px;
+            margin: 20px 0;
+            color: white;
+        }
+        .primarydetails {
+            .image {
+                @include content-center;
+                img {
+                    width: 200px;
+                    height: 200px;
+                    object-fit: cover;
+                    object-position: top;
+                }
+                margin: 20px 0;
+            }
+        }
+        .shippingDetails{
+            margin: 10px 0;
+            @media screen and (max-width: $mobile_limit) {
+                font-size: 0.8em;
+            }
+        }
+        .trackingButton {
+            @include content-center;
+            margin: 40px auto;
+        }
+        #trackingContainer {
+            position: relative;
+            max-height: 0px;
+            overflow: hidden;
+            transition: max-height 0.5s;
+            @media screen and (max-width: $mobile_limit) {
+                font-size: 0.8em;
+            }
+            .tracking {
+                position: relative;
+                margin: 35px 30px;
+                // min-height: 500px;
+            }
+            .tracking::before {
+                content: "";
+                width: 5px;
+                height: 100%;
+                background-color: #7ad0a7;
+                position: absolute;
+            }
+            .tracking::after {
+                content: "";
+                width: 10px;
+                height: 10px;
+                border-bottom: 4px solid #7ad0a7;
+                border-left: 4px solid #7ad0a7;
+                position: absolute;
+                left: -5px;
+                bottom: 2px;
+                transform: rotate(-45deg);
+            }
+            .trackingunit {
+                padding: 10px 30px;
+
+            }
+            @media screen and (max-width: $mobile_limit) {
+                .tracking {
+                    position: relative;
+                    margin: 20px 10px;
+                }
+            }
+        }
+    }
+}
