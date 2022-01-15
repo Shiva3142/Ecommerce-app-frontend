@@ -11,6 +11,7 @@ import ProductDetails from './ProductDetails'
 import Truck from '../../Assets/Product/truck.svg'
 import Delivery from '../../Assets/Product/delivery.svg'
 import ProductData from '../../Assets/Products/Data/ProductsData.json';
+import Loder from '../Templates/Loder'
 
 
 function Product() {
@@ -21,7 +22,9 @@ function Product() {
             console.log("useeffect");
             for (let index = 0; index < ProductData.length; index++) {
                 if (ProductData[index].id === parseInt(product_id)) {
-                    updateProductDetails(ProductData[index]);
+                    setTimeout(()=>{
+                        updateProductDetails(ProductData[index]);
+                    },1000)
                     break;
                 }
             }
@@ -102,12 +105,14 @@ function Product() {
                             </div>
                         </div>
                         {/* {JSON.stringify(productDetails)} */}
-                    </Container>
+                    {/* </Container>
 
-                    <Container>
+                    <Container> */}
                         <ProductDetails data={productDetails} />
                     </Container>
-                </>) : (<></>)
+                </>) : (<>
+                    <Loder/>
+</>)
             }
             <RecommendProducts />
             <NewsLetter />

@@ -1,0 +1,24 @@
+@import '../variables';
+@import '../mixins.scss';
+
+.DefaultModalContainer{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(128, 128, 128, 0.141);
+    z-index: 500;
+    font-size: 1rem;
+    @include content-center;
+    .Modal{
+        width: 80%;
+        height: 75vh;
+        background: white;
+        overflow-y: auto;
+        @media screen and (max-width:$mobile_limit) {
+            height: 60vh;
+        }
+        z-index: 600;
+    }
+}

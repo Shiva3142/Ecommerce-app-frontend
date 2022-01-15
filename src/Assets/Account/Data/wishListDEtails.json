@@ -1,0 +1,22 @@
+[
+    {
+        "product_id": 261311,
+        "title": "Basic Slim Fit T-Shirt",
+        "image": "/products/img1.png"
+    },
+    {
+        "product_id": 261312,
+        "title": "Loose Textured T-Shirt",
+        "image": "/products/img3.png"
+    },
+    {
+        "product_id": 261312,
+        "title": "Loose Textured T-Shirt",
+        "image": "/products/img4.png"
+    },
+    {
+        "product_id": 261312,
+        "title": "Loose Textured T-Shirt",
+        "image": "/products/img5.png"
+    }
+]

@@ -1,5 +1,5 @@
-import { Container, Grid } from '@mui/material'
-import React from 'react'
+import { Button, Container, Grid } from '@mui/material'
+import React, { useState } from 'react'
 import '../../Styles/Templates/Footer.scss'
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
@@ -7,7 +7,9 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import EcommerceTag from '../../Assets/Templates/E-commerce-tag.svg';
+import DefaultSnackBar from './DefaultSnackBar';
 function Footer() {
+   
     return (
         <>
             <footer>
@@ -15,7 +17,6 @@ function Footer() {
                     <Grid container spacing={2}>
                         <Grid item xs={12} md={5} className='siteDesc'>
                             <div className="siteDesc">
-
                                 <section>
                                     <img src={EcommerceTag} alt="" /> <h3>
                                         <span style={{ color: 'coral' }}>E-</span>Shop
@@ -72,9 +73,9 @@ function Footer() {
                         </Grid>
                     </Grid>
                 </Container>
-                    <div className='footerText'>
-                        DESIGN BY ICEO.CO - © 2019. ALL RIGHTS RESERVED.
-                    </div>
+                <div className='footerText'>
+                    DESIGN BY ICEO.CO - © 2019. ALL RIGHTS RESERVED.
+                </div>
             </footer>
         </>
     )

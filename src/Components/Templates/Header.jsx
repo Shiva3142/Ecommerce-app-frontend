@@ -60,7 +60,6 @@ function Header() {
                     <input type="search" name="search" id="search" placeholder='Type Here' />
                     <button>
                         <SearchIcon />
-
                     </button>
                     </div>
                 </div>

@@ -17,6 +17,7 @@ import Image4 from '../../Assets/Home/products/img4.png';
 import Arrivals from './Arrivals';
 import ChoodingReason from './ChoodingReason';
 import RecommendProducts from './RecommendProducts'
+import DefaultModal from '../Templates/DefaultModal'
 
 function HomePage() {
     useEffect(() => {
@@ -25,6 +26,7 @@ function HomePage() {
 
     return (
         <>
+        {/* <DefaultModal/> */}
             <div className="HomeContainer">
                 <Header />
                 <Container className='homeHeadingContainer'>
@@ -35,6 +37,7 @@ function HomePage() {
                         <button><ArrowForwardIcon /></button>
                         <span>SHOP HERE</span>
                     </div>
+
                 </Container>
                 <Grid className='homeFeatures' container spacing={2}>
                     <Grid className="homeFeaturesContainer" item md={9} sm={12}>

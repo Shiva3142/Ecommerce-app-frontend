@@ -6,10 +6,31 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import PaperImage from '../../Assets/Product/paper.png'
 import MaterialImage from '../../Assets/Product/material.png'
 import MaterialDesc from '../../Assets/Product/mateialDesc.png'
+import DefaultSnackBar from '../Templates/DefaultSnackBar';
 function ProductDetails(object) {
     let [counter, updatecounter] = useState(1)
     let [size, updateSize] = useState("")
-    console.log(object);
+    // console.log(object);
+    let [snackContent, updateSnackContent] = useState({
+        type: "",
+        message: "",
+        isOpen: false
+    })
+    const handleClose = () => {
+        updateSnackContent({
+            ...snackContent,
+            isOpen: false
+        })
+    };
+    function AddtoCart(event) {
+        updateSnackContent({
+            type: "success",
+            message: "You can Proceed",
+            isOpen: true
+        })
+    }
+
+
     return (
         <div className='productDetailsContainer'>
             <Grid container spacing={2}>
@@ -97,7 +118,7 @@ function ProductDetails(object) {
                             </div>
                             <div className="addtocart">
 
-                                <Button variant="contained">ADD TO CART</Button>
+                                <Button variant="contained" onClick={AddtoCart}>ADD TO CART</Button>
                                 <div className="heartIButton">
                                     <FavoriteBorderIcon />
                                 </div>
@@ -126,6 +147,7 @@ function ProductDetails(object) {
                     </div>
                 </div>
             </div>
+            <DefaultSnackBar type={snackContent.type} message={snackContent.message} isOpen={snackContent.isOpen} handleClose={handleClose} />
         </div>
     )
 }

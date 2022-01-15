@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import DefaultSnackBar from '../Templates/DefaultSnackBar';
 
 function Register(object) {
     let [signupdetails, updatesignupdetails] = useState({
@@ -7,6 +8,17 @@ function Register(object) {
         email: "",
         password: "",
     })
+    let [snackContent, updateSnackContent] = useState({
+        type: "",
+        message: "",
+        isOpen: false
+    })
+    const handleClose = () => {
+        updateSnackContent({
+            ...snackContent,
+            isOpen: false
+        })
+    };
     function setLoginData(event) {
         updatesignupdetails((predata) => {
             return ({
@@ -18,9 +30,17 @@ function Register(object) {
     function Signup(event) {
         event.preventDefault()
         if (signupdetails.fname === "" || signupdetails.lname === "" || signupdetails.email === "" || signupdetails.password === "") {
-            window.alert("Values Can't empty")
+            updateSnackContent({
+                type: "warning",
+                message: "Values Can't be Empty",
+                isOpen: true
+            })
         } else {
-
+            updateSnackContent({
+                type: "success",
+                message: "You can Proceed",
+                isOpen: true
+            })
         }
     }
     return (
@@ -38,7 +58,7 @@ function Register(object) {
                 <input type="password" name="password" id="password" placeholder='Password' onChange={setLoginData} value={signupdetails.password} required />
                 <div className="options">
                     <label htmlFor="conditions">
-                        <input type="checkbox" name="keep" id="conditions" />
+                        <input type="checkbox" name="keep" id="conditions"/>
                         <span>I agree to the Google Terms of Service and Privacy Policy</span>
                     </label>
                 </div>
@@ -49,6 +69,7 @@ function Register(object) {
                     }} >Are you already a member?</span>
                 </div>
             </form>
+            <DefaultSnackBar type={snackContent.type} message={snackContent.message} isOpen={snackContent.isOpen} handleClose={handleClose} />
         </>
     )
 }

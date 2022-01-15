@@ -6,7 +6,8 @@ import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
 import Profile from './Profile';
 import Orders from './Orders';
-
+import WishList from './WishList';
+import BookmarksIcon from '@mui/icons-material/Bookmarks';
 function Account() {
     let [togglePage, updatetogglePage] = useState(0)
     return (
@@ -32,13 +33,29 @@ function Account() {
                                 Orders
                             </span>
                         </div>
+                        <div className="option" onClick={() => {
+                            updatetogglePage(2)
+                        }}>
+                            <BookmarksIcon />
+                            <span>
+                                Wishlist
+                            </span>
+                        </div>
                     </div>
                     {
                         togglePage === 0 ? (<>
                             <Profile />
                         </>) : (
                             <>
-                                <Orders />
+                                {
+                                    togglePage === 1 ? (<>
+                                        <Orders />
+                                    </>) : (
+                                        <>
+                                            <WishList />
+                                        </>
+                                    )
+                                }
                             </>
                         )
                     }

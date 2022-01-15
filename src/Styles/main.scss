@@ -31,3 +31,8 @@ hr {
     margin: 5px 0;
     color: rgba(128, 128, 128, 0.504);
 }
+.LoderContainer{
+    background-color: transparent;
+    padding: 10px;
+    @include content-center;
+}
