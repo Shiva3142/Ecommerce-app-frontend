@@ -27,11 +27,21 @@ function Header() {
         }
     }
     function toggleSearchBar(event) {
-        let SearchBar = document.getElementById('SearchBar')
-        if (SearchBar.style.maxHeight === '0px') {
-            SearchBar.style.maxHeight = "80px"
+        if (window.innerWidth > 900) {
+            let SearchBar = document.getElementById('SearchBar1')
+            if (SearchBar.style.maxWidth === '0px') {
+                SearchBar.style.maxWidth = "1000px"
+            } else {
+                SearchBar.style.maxWidth = "0px"
+            }
+
         } else {
-            SearchBar.style.maxHeight = "0px"
+            let SearchBar = document.getElementById('SearchBar2')
+            if (SearchBar.style.maxHeight === '0px') {
+                SearchBar.style.maxHeight = "80px"
+            } else {
+                SearchBar.style.maxHeight = "0px"
+            }
         }
     }
     return (
@@ -42,11 +52,17 @@ function Header() {
                         <DehazeIcon className='navbarOptionBtn' id="navbarOptionBtn" onClick={toggleNavbar} />
                         <NavLink to="/"> <img src={Logo} alt="Logo" /></NavLink>
                     </div>
-                    <nav className='desktopNav'>
-                        <a href="#men"> <NavLink to="/products"> Men</NavLink></a>
-                        <a href="#women">Women</a>
-                        <a href="#kids">Kids</a>
-                    </nav>
+                    <div className="middleSearchbar">
+
+                        <div className="SearchBar" id="SearchBar1" >
+                            <div className="search">
+                                <input type="search" name="search" id="search" placeholder='Type Here' />
+                                <button>
+                                    <SearchIcon />
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                     <div className="navActions">
                         <img src={Search} alt="Search" onClick={toggleSearchBar} />
                         <NavLink to="/cart">
@@ -60,7 +76,7 @@ function Header() {
                         <ClearIcon id="hideNavBar" onClick={toggleNavbar} />
                         {/* <div > */}
 
-                        <Accordion className="filterItem" style={{margin:"50px 0 0 0"}}>
+                        <Accordion className="filterItem" style={{ margin: "50px 0 0 0" }}>
                             <AccordionSummary
                                 expandIcon={<ExpandMoreIcon />}
                                 aria-controls="panel1a-content"
@@ -78,7 +94,7 @@ function Header() {
                                 </Typography>
                             </AccordionDetails>
                         </Accordion>
-                        <Accordion className="filterItem" style={{"margin":"0px"}}>
+                        <Accordion className="filterItem" style={{ "margin": "0px" }}>
                             <AccordionSummary
                                 expandIcon={<ExpandMoreIcon />}
                                 aria-controls="panel1a-content"
@@ -95,7 +111,7 @@ function Header() {
                                 </Typography>
                             </AccordionDetails>
                         </Accordion>
-                        <Accordion className="filterItem" style={{"margin":"0px"}}>
+                        <Accordion className="filterItem" style={{ "margin": "0px" }}>
                             <AccordionSummary
                                 expandIcon={<ExpandMoreIcon />}
                                 aria-controls="panel1a-content"
@@ -117,7 +133,64 @@ function Header() {
                         {/* </div> */}
                     </nav>
                 </header>
-                <div id="SearchBar">
+                <nav className='desktopNav'>
+
+                        <Accordion className="filterItem" style={{ margin: "0px 0 0 0" }}>
+                            <AccordionSummary
+                                expandIcon={<ExpandMoreIcon />}
+                                aria-controls="panel1a-content"
+                                id="productType1"
+                            >
+                                <Typography>Shop By Category</Typography>
+                            </AccordionSummary>
+                            <AccordionDetails>
+                                <Typography>
+                                    <div className="DesktopNavbarContaint">
+                                        <NavLink to="/products"> Men</NavLink>
+                                        <NavLink to="/Products">Women</NavLink>
+                                        <NavLink to="/Products">Kids</NavLink>
+                                    </div>
+                                </Typography>
+                            </AccordionDetails>
+                        </Accordion>
+                    <Accordion className="filterItem" style={{ "margin": "0px" }}>
+                        <AccordionSummary
+                            expandIcon={<ExpandMoreIcon />}
+                            aria-controls="panel2a-content"
+                            id="productType2"
+                        >
+                            <Typography>Shop By Collection</Typography>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <Typography>
+                                <div className="DesktopNavbarContaint">
+                                    <NavLink to="/products"> Summer</NavLink>
+                                    <NavLink to="/Products">Winter</NavLink>
+                                </div>
+                            </Typography>
+                        </AccordionDetails>
+                    </Accordion>
+                    <Accordion className="filterItem" style={{ "margin": "0px" }}>
+                        <AccordionSummary
+                            expandIcon={<ExpandMoreIcon />}
+                            aria-controls="panel3a-content"
+                            id="productType3"
+                        >
+                            <Typography>Shop By Type</Typography>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <Typography>
+                                <div className="DesktopNavbarContaint">
+                                    <NavLink to="/products"> T-Shirts</NavLink>
+                                    <NavLink to="/Products">Sweatshirt</NavLink>
+                                    <NavLink to="/Products">Tank Tops</NavLink>
+                                    <NavLink to="/Products">Dress shirts</NavLink>
+                                </div>
+                            </Typography>
+                        </AccordionDetails>
+                    </Accordion>
+                </nav>
+                <div className="SearchBar" id="SearchBar2">
                     <div className="search">
                         <input type="search" name="search" id="search" placeholder='Type Here' />
                         <button>

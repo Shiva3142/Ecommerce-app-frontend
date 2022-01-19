@@ -4,8 +4,11 @@ import '../../Styles/Checkout/Success.scss'
 import SuccessImage from '../../Assets/Checkout/success.png'
 import CartImage from '../../Assets/Templates/Cart.svg'
 import DeliveryVanIcon from '../../Assets/Product/truck.svg'
+import { useNavigate } from 'react-router-dom'
 
 function Success({ CartData, totalAmount }) {
+    let navigate=useNavigate()
+
     return (
         <>
             <div className="successPage">
@@ -72,8 +75,12 @@ function Success({ CartData, totalAmount }) {
                         A warm thank you from TEQUILA T-SHIRTS, we hope you will love the tshirts order again from US
                     </h4>
                     <div className="checkoutButtons">
-                        <button>Continue shopping</button>
-                        <button>Track ORDER</button>
+                        <button onClick={()=>{
+                            navigate("/")
+                        }}>Continue shopping</button>
+                        <button onClick={()=>{
+                            navigate('/account')
+                        }}>Track ORDER</button>
                     </div>
                 </div>
             </div>

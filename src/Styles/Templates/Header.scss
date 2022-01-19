@@ -5,17 +5,6 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    nav {
-        min-width: 300px;
-        display: flex;
-        justify-content: space-between;
-        a {
-            color: white;
-            &:hover {
-                color: wheat;
-            }
-        }
-    }
     .navActions {
         min-width: 8em;
         display: flex;
@@ -29,6 +18,12 @@ header {
         }
     }
     #leftNav {
+        .css-1elwnq4-MuiPaper-root-MuiAccordion-root{
+            box-shadow: none !important;
+        }
+        .css-67l5gl{
+            box-shadow: none !important;
+        }
         z-index: 1000;
         position: fixed;
         left: -250px;
@@ -72,9 +67,6 @@ header {
         }
     }
     @media screen and(max-width: $mobile_limit) {
-        .desktopNav {
-            display: none;
-        }
         .logo {
             img {
                 width: 3.5rem;
@@ -91,11 +83,73 @@ header {
         }
     }
 }
+.desktopNav {
+    .css-1elwnq4-MuiPaper-root-MuiAccordion-root{
+        box-shadow: none !important;
+    }
+    .css-67l5gl{
+        box-shadow: none !important;
+    }
+    
+    .css-15v22id-MuiAccordionDetails-root{
+        padding: 0 !important;
+    }
+    .css-o4b71y-MuiAccordionSummary-content.Mui-expanded{
+        margin: 12px 0 !important;
+    }
+    .css-sh22l5-MuiButtonBase-root-MuiAccordionSummary-root.Mui-expanded{
+        min-height: auto !important;
+    }
+    .css-1elwnq4-MuiPaper-root-MuiAccordion-root:before{
+        height: 0;
+    }
+    min-width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background: white;
+    align-items: center;
+    position: relative;
+    @media screen and(max-width: $mobile_limit) {
+        display: none;
+    }
+    .DesktopNavbarContaint {
+        border: 1px solid gray;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        background: white;
+        width: 93%;
+        margin: 10px 0;
+        align-items: center;
+        padding: 20px;
+        a {
+            margin: 10px 0;
+            color: black;
+            &:hover {
+                color: #34495e;
+                text-decoration: underline;
+            }
+        }
+    }
+    .DesktopNavbarContaint::before{
+        content: "";
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        right: 4px;
+        top: -11px;
+        transform: rotate(45deg);
+        border:1px solid gray;
+        border-bottom: none;
+        border-right: none;
+        background-color: white;
+    }
+}
 .headerContainer {
-    #SearchBar {
-        max-height: 0px;
+   
+    .SearchBar {
         overflow: hidden;
-        transition: max-height 0.5s;
         .search {
             display: flex;
             align-items: center;
@@ -122,6 +176,26 @@ header {
             }
         }
     }
+    .middleSearchbar{
+        @include content-center;
+        justify-content: end;
+        width: 70%;
+        .SearchBar{
+            width: 20rem;
+        }
+        @media screen and(max-width: $mobile_limit) {
+            display: none;
+        }
+    }
+    #SearchBar1{
+        max-width:  0px;
+        transition: max-width 0.5s;
+    }
+    #SearchBar2{
+        max-height: 0px;
+        transition: max-height 0.5s;
+        @media screen and(min-width: $mobile_limit) {
+            display: none;
+        }
+    }
 }
-
-
