@@ -15,7 +15,7 @@
         color: black;
     }
     .logo svg {
-        fill: black;
+        fill: black ;
     }
     .search {
         border: 1px solid gray;
@@ -35,4 +35,12 @@ hr {
     background-color: transparent;
     padding: 10px;
     @include content-center;
+}
+
+
+.css-1elwnq4-MuiPaper-root-MuiAccordion-root{
+    box-shadow: none !important;
+}
+.css-67l5gl{
+    box-shadow: none !important;
 }

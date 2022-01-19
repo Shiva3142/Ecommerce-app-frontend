@@ -9,6 +9,14 @@ import Search from '../../Assets/Templates/Search.svg'
 import DehazeIcon from '@mui/icons-material/Dehaze';
 import ClearIcon from '@mui/icons-material/Clear';
 import SearchIcon from '@mui/icons-material/Search';
+import {
+    Accordion,
+    AccordionDetails,
+    AccordionSummary,
+    Typography,
+} from "@mui/material"
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore"
+
 function Header() {
     function toggleNavbar(event) {
         let leftnav = document.getElementById('leftNav')
@@ -40,7 +48,7 @@ function Header() {
                         <a href="#kids">Kids</a>
                     </nav>
                     <div className="navActions">
-                        <img src={Search} alt="Search" onClick={toggleSearchBar}/>
+                        <img src={Search} alt="Search" onClick={toggleSearchBar} />
                         <NavLink to="/cart">
                             <img src={Cart} alt="Cart" />
                         </NavLink>
@@ -50,17 +58,71 @@ function Header() {
                     </div>
                     <nav id='leftNav'>
                         <ClearIcon id="hideNavBar" onClick={toggleNavbar} />
-                        <a href="#men"> <NavLink to="/products"> Men</NavLink></a>
-                        <a href="#women">Women</a>
-                        <a href="#kids">Kids</a>
+                        {/* <div > */}
+
+                        <Accordion className="filterItem" style={{margin:"50px 0 0 0"}}>
+                            <AccordionSummary
+                                expandIcon={<ExpandMoreIcon />}
+                                aria-controls="panel1a-content"
+                                id="productType"
+                            >
+                                <Typography>Shop By Category</Typography>
+                            </AccordionSummary>
+                            <AccordionDetails>
+                                <Typography>
+                                    <div className="LeftNavbarContaint">
+                                        <NavLink to="/products"> Men</NavLink>
+                                        <NavLink to="/Products">Women</NavLink>
+                                        <NavLink to="/Products">Kids</NavLink>
+                                    </div>
+                                </Typography>
+                            </AccordionDetails>
+                        </Accordion>
+                        <Accordion className="filterItem" style={{"margin":"0px"}}>
+                            <AccordionSummary
+                                expandIcon={<ExpandMoreIcon />}
+                                aria-controls="panel1a-content"
+                                id="productType"
+                            >
+                                <Typography>Shop By Collection</Typography>
+                            </AccordionSummary>
+                            <AccordionDetails>
+                                <Typography>
+                                    <div className="LeftNavbarContaint">
+                                        <NavLink to="/products"> Summer</NavLink>
+                                        <NavLink to="/Products">Winter</NavLink>
+                                    </div>
+                                </Typography>
+                            </AccordionDetails>
+                        </Accordion>
+                        <Accordion className="filterItem" style={{"margin":"0px"}}>
+                            <AccordionSummary
+                                expandIcon={<ExpandMoreIcon />}
+                                aria-controls="panel1a-content"
+                                id="productType"
+                            >
+                                <Typography>Shop By Type</Typography>
+                            </AccordionSummary>
+                            <AccordionDetails>
+                                <Typography>
+                                    <div className="LeftNavbarContaint">
+                                        <NavLink to="/products"> T-Shirts</NavLink>
+                                        <NavLink to="/Products">Sweatshirt</NavLink>
+                                        <NavLink to="/Products">Tank Tops</NavLink>
+                                        <NavLink to="/Products">Dress shirts</NavLink>
+                                    </div>
+                                </Typography>
+                            </AccordionDetails>
+                        </Accordion>
+                        {/* </div> */}
                     </nav>
                 </header>
                 <div id="SearchBar">
                     <div className="search">
-                    <input type="search" name="search" id="search" placeholder='Type Here' />
-                    <button>
-                        <SearchIcon />
-                    </button>
+                        <input type="search" name="search" id="search" placeholder='Type Here' />
+                        <button>
+                            <SearchIcon />
+                        </button>
                     </div>
                 </div>
             </Container>
